@@ -829,14 +829,73 @@ D-14 & RNF-ED-01 & El plan de generaci\'on de datos sint\'eticos para pruebas de
 \normalsize
 % ===================== 4. GESTIÓN DEL CAMBIO Y CCB =====================
 \section{Gestión del cambio y CCB}
-
 \subsection{RFC-01}
+\textbf{Tipo:} Restricción/normativa \quad \textbf{Solicitante:} Rosselyn Sánchez (detectado en D-10, inspección Fagan)
+
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3.2cm}X}
+\toprule
+Requisito afectado & RF-CLI-01 / mockup MU-37 \\
+Descripción del cambio & Formalizar la corrección de MU-37 exigiendo minimización de campos en el formulario de registro de cliente. \\
+Justificación de negocio & Cumplimiento de RD-PRI-02 (privacidad por diseño y mínimo privilegio, LOPDP); reduce riesgo legal por captura innecesaria de datos personales. \\
+Requisitos impactados (matriz) & RF-CLI-01, RD-PRI-02, RNF-IU-01 \\
+Artefactos impactados & Mockup MU-37; fila RF-CLI-01 en \texttt{matriz\_trazabilidad.csv} \\
+Costo estimado & 4 horas-persona \\
+Riesgo & Bajo si se aprueba; medio (legal) si no se corrige \\
+Recomendación técnica & Aprobar \\
+\bottomrule
+\end{tabularx}
 
 \subsection{RFC-02}
+\textbf{Tipo:} Alcance (nuevo requisito/ampliación) \quad \textbf{Solicitante:} Rosselyn Sánchez (detectado en D-12, inspección Fagan)
+
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3.2cm}X}
+\toprule
+Requisito afectado & RF-INS-01, RF-RUT-01, RF-RUT-02, RF-RUT-03 \\
+Descripción del cambio & Formalizar la corrección de los cinco mockups pendientes de Instructor/Rutinas (MU-48, MU-49, MU-17, MU-29, MU-60) y cerrar el requisito huérfano RF-INS-01 en la matriz (D-16). \\
+Justificación de negocio & Sin seguimiento formal, el módulo de instructor/rutinas queda incompleto de cara al MVP. \\
+Requisitos impactados (matriz) & RF-INS-01 (huérfano), RF-RUT-01, RF-RUT-02, RF-RUT-03 \\
+Artefactos impactados & Los cinco mockups citados; fila RF-INS-01 en la matriz \\
+Costo estimado & 8 horas-persona \\
+Riesgo & Medio (afecta un módulo completo) \\
+Recomendación técnica & Aprobar con condiciones \\
+\bottomrule
+\end{tabularx}
 
 \subsection{RFC-03}
+\textbf{Tipo:} Calidad (modificación de un RNF) \quad \textbf{Solicitante:} Erick Mera (detectado en D-07, inspección Fagan)
+
+\begin{tabularx}{\textwidth}{>{\bfseries}p{3.2cm}X}
+\toprule
+Requisito afectado & RNF-SEG-03 \\
+Descripción del cambio & Acotar la condición "despliegue conectado" que activa TLS 1.2+: se aplica a todo despliegue accesible por red (LAN o internet); el modo offline queda explícitamente fuera de alcance del MVP actual. \\
+Justificación de negocio & Elimina la ambigüedad detectada en inspección; evita implementaciones inconsistentes de seguridad de transporte. \\
+Requisitos impactados (matriz) & RNF-SEG-03 (origen interno y origen LOPDP Art. 24) \\
+Artefactos impactados & Sección 8 del ERS (NFR); matriz de trazabilidad \\
+Costo estimado & 3 horas-persona \\
+Riesgo & Bajo \\
+Recomendación técnica & Aprobar \\
+\bottomrule
+\end{tabularx}
 
 \subsection{Acta del CCB}
+\textbf{Asistentes y roles:} Ariel Castro (Presidente), Rosselyn Sánchez (Representante del cliente, simulado), Erick Mera (Analista/Desarrollador).
+
+\textbf{Nota metodológica.} Al ser un equipo de tres integrantes, Erick Mera asumió doble rol (Analista y Desarrollador), siguiendo el mismo criterio aplicado en la inspección Fagan.
+
+\textbf{Agenda:} (1) presentación de RFC-01, RFC-02 y RFC-03; (2) deliberación y voto por cada RFC; (3) registro de decisiones y responsables; (4) definición de la versión resultante del ERS.
+
+\begin{longtable}{p{1.5cm}p{7.5cm}p{2.5cm}p{2.5cm}}
+\toprule
+\textbf{RFC} & \textbf{Deliberación resumida} & \textbf{Decisión} & \textbf{Responsable / Plazo} \\
+\midrule
+RFC-01 & El comité coincide en que la minimización de campos en MU-37 es una obligación derivada de RD-PRI-02 y no una mejora opcional. & Aprobado & Rosselyn Sánchez / 1 semana \\
+RFC-02 & Se aprueba con la condición de completar la fila de RF-INS-01 en la matriz de trazabilidad antes de publicar la línea base. & Aprobado con condiciones & Erick Mera / 1 semana \\
+RFC-03 & Se acepta acotar el alcance de RNF-SEG-03 al no existir aún un modo de despliegue offline definido en el proyecto. & Aprobado & Ariel Castro / 3 días \\
+\bottomrule
+\end{longtable}
+
+\textbf{Versión resultante del ERS:} v1.5.8 $\rightarrow$ v1.5.9, tras la implementación de los tres cambios aprobados.
+
 
 % ===================== 5. TRAZABILIDAD EN HERRAMIENTA CASE =====================
 \section{Trazabilidad en herramienta CASE}
@@ -990,6 +1049,44 @@ D-16 & Sec.9 matriz\_\allowbreak trazabilidad.csv & RF-INS-01 no aparece como fi
  
 
 \subsection*{Anexo C -- Formularios RFC y Acta del CCB}
+\subsection*{Anexo C -- Formularios RFC y Acta del CCB}
+
+A continuación se presentan los formularios completos de las tres solicitudes de cambio y el Acta del Change Control Board, firmados por los tres integrantes del equipo.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figuras/RFC-01.jpeg}
+\caption{RFC-01 -- Restricción/normativa (mockup MU-37)}
+\label{fig:rfc01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figuras/RFC-02.jpg}
+\caption{RFC-02 -- Alcance, nuevo requisito (RF-INS-01)}
+\label{fig:rfc02}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figuras/RFC-03.jpg}
+\caption{RFC-03 -- Calidad, modificación de un RNF (RNF-SEG-03)}
+\label{fig:rfc03}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth,page=1]{figuras/Acta_CCB.jpg}
+\caption{Acta del CCB -- página 1 (roles, agenda y deliberación)}
+\label{fig:acta_ccb_p1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth,page=2]{figuras/Acta_CCB2.jpg}
+\caption{Acta del CCB -- página 2 (firmas)}
+\label{fig:acta_ccb_p2}
+\end{figure}
 \subsection*{Anexo D -- Exportación CSV del backlog}
 \subsection*{Anexo E -- Capturas del tablero CASE y del repositorio Git}
 \subsection*{Anexo F -- Referencias IEEE y declaración de uso de IA}
