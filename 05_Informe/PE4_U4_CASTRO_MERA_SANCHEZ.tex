@@ -272,6 +272,84 @@ implementación, mejorando la consistencia interna del ERS y reduciendo el riesg
 de retrabajo durante el desarrollo del sistema \cite{pohl2025,swebok_v4}. 
 
 \subsection{Gestión de requisitos}
+subsubsection{Gestión de la configuración, línea base y versionado}
+ 
+La gestión de requisitos comprende el conjunto de actividades orientadas a
+mantener la integridad, la trazabilidad y la evolución controlada del
+conjunto de requisitos a lo largo del proyecto \cite{iso29148_2018,
+iso15288_2023}. Un elemento central es la \textbf{gestión de la
+configuración}: el ERS se trata como un elemento de configuración sujeto a
+control de versiones, de modo que cada cambio quede identificado,
+registrado y sea reversible. La \textbf{línea base (baseline)} es el punto
+de referencia formal --- una versión del ERS aprobada y congelada--- a
+partir del cual cualquier modificación posterior debe tramitarse como un
+cambio controlado y no como una edición libre \cite{iso12207_2017,
+pohl2025}. En términos prácticos de control de versiones, esto se traduce
+en un \emph{commit} semántico, un \emph{tag} anotado y un registro de
+cambios (\texttt{CHANGELOG.md}) que documenten qué contiene cada versión y
+por qué evolucionó.
+ 
+\subsubsection{Atributos de los requisitos}
+ 
+Wiegers y Beatty \cite{wiegers2013} recomiendan asociar a cada requisito un
+conjunto de atributos que lo hacen gestionable como un artefacto
+individual, entre ellos: identificador único, estado (propuesto,
+aprobado, implementado, verificado), prioridad, origen o fuente,
+estabilidad, criticidad de negocio y método de verificación asociado.
+Estos atributos son los que después permiten construir campos
+personalizados en una herramienta CASE y priorizar objetivamente frente a
+un cambio propuesto.
+ 
+\subsubsection{Trazabilidad: pre-traceability, post-traceability y matriz}
+ 
+Gotel y Finkelstein \cite{gotel1994} caracterizan el problema de la
+trazabilidad de requisitos distinguiendo dos fases: la
+\textbf{pre-traceability}, que documenta el origen de un requisito antes
+de su especificación (de qué stakeholder o necesidad de negocio surge), y
+la \textbf{post-traceability}, que documenta hacia dónde se proyecta un
+requisito una vez especificado (casos de uso, componentes de diseño,
+código, casos de prueba). Cleland-Huang, Gotel y Zisman
+\cite{cleland2012} amplían este marco distinguiendo la trazabilidad
+\emph{hacia atrás} (backward, del requisito a su origen) y \emph{hacia
+adelante} (forward, del requisito a sus artefactos derivados), y señalan
+que la trazabilidad bidireccional --- exigir ambos sentidos para cada
+requisito --- es la que realmente sostiene el análisis de impacto ante un
+cambio.
+ 
+La \textbf{matriz de trazabilidad} es el artefacto que materializa esta
+relación en forma tabular, típicamente en la forma
+Stakeholder~$\rightarrow$~Requisito Funcional~$\rightarrow$~Caso de
+Uso~$\rightarrow$~Componente/Clase~$\rightarrow$~Caso de Prueba
+\cite{wiegers2013, cleland2012}. Un requisito sin enlaces --- huérfano---
+en cualquiera de los dos sentidos es, en sí mismo, un defecto de gestión
+que debe reportarse.
+ 
+\subsubsection{El proceso de cambio: RFC, impacto, CCB, cierre}
+ 
+Una vez establecida la línea base, todo cambio debe tramitarse mediante
+una \textbf{solicitud formal de cambio} (Request for Change, RFC), que
+documenta el requisito afectado, la justificación de negocio y el cambio
+propuesto \cite{pmbok7, iso12207_2017}. El \textbf{análisis de impacto}
+recorre sistemáticamente la matriz de trazabilidad para identificar tanto
+los artefactos directamente afectados como los indirectos (por ejemplo, un
+cambio en un requisito funcional puede repercutir en un requisito no
+funcional de rendimiento asociado). El \textbf{CCB} delibera sobre la RFC
+con base en ese análisis y emite una decisión --- aprobado, aprobado con
+condiciones, rechazado o diferido--- que se registra en un acta motivada
+\cite{pmbok7}. Finalmente, la \textbf{implementación} traslada la decisión
+al ERS (nueva versión, nueva línea base) y el \textbf{cierre} verifica que
+el cambio fue correctamente aplicado y comunicado.
+ 
+\subsubsection{Métricas de volatilidad}
+ 
+La volatilidad de requisitos mide cuánto cambia el conjunto de requisitos
+respecto a una línea base, típicamente como proporción de requisitos
+añadidos, modificados o eliminados en un periodo dado
+\cite{pohl2025, wiegers2013}. Una volatilidad alta y sostenida suele
+indicar elicitación insuficiente en las etapas tempranas, mientras que
+picos puntuales asociados a RFC concretas son un indicador normal de la
+evolución controlada del proyecto.
+ 
 
 \subsection{Herramientas CASE para IR}
 
