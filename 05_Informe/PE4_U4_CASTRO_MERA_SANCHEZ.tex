@@ -408,6 +408,75 @@ central \cite{pohl2025}.
 
 
 \subsection{IR en procesos ágiles}
+\subsubsection{Backlog, historias de usuario y criterios de aceptación}
+ 
+En los enfoques ágiles, la especificación de requisitos se organiza
+alrededor del \textbf{product backlog}: una lista priorizada y viva de
+todo lo que el producto podría necesitar, en contraste con el ERS
+documental que se congela en una línea base \cite{cohn2004}. Cada elemento
+del backlog suele expresarse como \textbf{historia de usuario}, con el
+formato ``Como \emph{[rol]}, quiero \emph{[funcionalidad]}, para
+\emph{[beneficio]}'', que captura la intención del stakeholder sin fijar
+prematuramente los detalles de implementación \cite{cohn2004}. Cada
+historia se completa con \textbf{criterios de aceptación}: condiciones
+verificables que determinan cuándo la historia se considera correctamente
+implementada, y que cumplen, en el contexto ágil, un papel equivalente al
+de los requisitos verificables del enfoque documental.
+ 
+\subsubsection{Grooming y Definition of Ready / Done}
+ 
+El \textbf{refinamiento del backlog} (grooming o backlog refinement) es la
+actividad recurrente en la que el equipo revisa, detalla, estima y
+reordena las historias antes de que entren a un sprint \cite{cohn2004}.
+Dos acuerdos de equipo delimitan la calidad de este proceso: la
+\textbf{Definition of Ready (DoR)}, que establece las condiciones mínimas
+que una historia debe cumplir para poder ser planificada (criterios de
+aceptación claros, dependencias identificadas, estimación posible), y la
+\textbf{Definition of Done (DoD)}, que establece las condiciones para
+considerar una historia terminada (código probado, criterios de
+aceptación verificados, documentación actualizada). Ambas funcionan como
+un control de calidad equivalente, en espíritu, a las listas de
+verificación de la inspección formal, aunque aplicadas de forma continua
+en vez de puntual.
+ 
+\subsubsection{BDD y Gherkin}
+ 
+El desarrollo guiado por comportamiento (\emph{Behavior-Driven
+Development}, BDD) propone escribir los criterios de aceptación en un
+lenguaje estructurado y semiformal --- el formato \textbf{Gherkin}, con la
+estructura \texttt{Dado / Cuando / Entonces} (\emph{Given / When / Then})
+--- de modo que el mismo artefacto sirva simultáneamente como
+especificación legible por el stakeholder y como prueba automatizable por
+el equipo técnico \cite{smart2014}. Este mecanismo reduce la brecha entre
+la validación documental (revisar que el requisito esté bien escrito) y la
+validación ejecutable (comprobar que el sistema efectivamente lo cumple).
+ 
+\subsubsection{Trazabilidad en entornos ágiles}
+ 
+En un entorno ágil, la trazabilidad no desaparece, pero cambia de soporte:
+en lugar de una matriz estática vinculada a un ERS congelado, se sostiene
+mediante enlaces entre epics, historias, sub-tareas y pruebas dentro de la
+propia herramienta de gestión del backlog (por ejemplo, Jira o Trello),
+lo cual exige la misma disciplina bidireccional --- hacia el origen y
+hacia los artefactos derivados--- descrita para el enfoque documental
+\cite{cleland2012, cohn2004}.
+ 
+\subsubsection{Contraste entre IR documental e IR ágil}
+ 
+Frente al enfoque documental --- que privilegia un ERS exhaustivo,
+validado formalmente y controlado mediante un CCB antes de cualquier
+cambio---, el enfoque ágil privilegia la entrega incremental de valor y la
+adaptación continua del backlog a partir de la retroalimentación del
+stakeholder \cite{cohn2004, swebok_v4}. Esto no implica ausencia de
+disciplina: implica que el control de calidad y el control de cambios se
+distribuyen en ciclos cortos (sprint a sprint) en lugar de concentrarse en
+hitos formales. El primer enfoque resulta más adecuado en contextos con
+requisitos regulatorios o contractuales estrictos, alta necesidad de
+auditoría y bajo margen de tolerancia a errores tardíos (por ejemplo,
+sistemas críticos o de cumplimiento normativo); el segundo resulta más
+adecuado en contextos de alta incertidumbre de producto, stakeholders
+disponibles de forma continua y necesidad de retroalimentación temprana
+del usuario final.
 
 % ===================== 4. INSPECCIÓN FAGAN =====================
 \section{Inspección Fagan}
