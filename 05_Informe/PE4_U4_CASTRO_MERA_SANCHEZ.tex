@@ -72,17 +72,81 @@ PhD. Guerrero Ulloa Gleiston Cicerón
 \section{Resumen y objetivos}
 
 \subsection*{Objetivo general}
+Aplicar técnicas formales de validación de requisitos, gestionar cambios mediante un
+Change Control Board simulado, implementar la trazabilidad del ERS en una herramienta CASE, establecer
+una línea base con Git y comparar metodológicamente la IR tradicional frente a la IR ágil, sobre el ERS
+real del Proyecto Fin de Curso.
 
 \subsection*{Objetivos específicos}
-\begin{enumerate}
-\item
-\item
+\begin{enumerate} 
+\item Ejecutar una inspección formal tipo Fagan sobre el ERS del PFC, con roles diferenciados, lista de
+verificación y registro de defectos.
+
+\item Calcular e interpretar métricas de inspección (densidad de defectos, distribución por tipo y severidad,
+tasa de corrección).
+\item Tramitar tres solicitudes formales de cambio (RFC) con análisis de impacto sustentado en la matriz de
+trazabilidad.
+\item Deliberar y decidir en un CCB simulado, dejando acta motivada y versión actualizada del ERS.
+\item Construir la trazabilidad bidireccional del ERS en una herramienta CASE de gestión (Jira o Trello)
+con campos personalizados y enlaces vericables.
+\item Establecer y publicar la línea base del ERS con control de versiones (commit semántico, tag anotado y
+CHANGELOG.md).
+\item Comparar herramientas CASE de IR y contrastar IR tradicional frente a IR ágil, cerrando con conclusiones críticas propias.
 \end{enumerate}
 
 % ===================== 3. FUNDAMENTO TEÓRICO =====================
 \section{Fundamento teórico}
-
+ 
 \subsection{Marco normativo}
+La validación y la gestión de requisitos no son prácticas aisladas: están
+formalmente ubicadas dentro de los procesos normalizados de ingeniería de
+sistemas y software. La norma ISO/IEC/IEEE 29148:2018 define el proceso de
+Ingeniería de Requisitos y, dentro de él, la actividad de \emph{validar
+requisitos} en el apartado 6.4, cuyo propósito es confirmar que el conjunto
+de requisitos especificados constituye una representación correcta y
+completa de las necesidades del stakeholder, y que cada requisito es
+verificable frente a un método de comprobación definido \cite{iso29148_2018}.
+Esta actividad se distingue de la especificación (6.2) y del análisis (6.3),
+que la preceden en el ciclo de vida del requisito.
+ 
+A nivel de procesos de ciclo de vida más amplios, la norma
+ISO/IEC/IEEE 15288:2023 --- orientada a sistemas --- y su contraparte
+ISO/IEC/IEEE 12207:2017 --- orientada a software --- ubican el control de
+cambios dentro del proceso de \emph{Gestión de la Configuración}, cuyo
+objetivo es establecer y mantener la integridad de los elementos de
+configuración (entre ellos, el ERS) a lo largo de su evolución
+\cite{iso15288_2023, iso12207_2017}. Todo cambio a un requisito ya
+baselineado debe, según estas normas, pasar por un proceso controlado de
+solicitud, evaluación de impacto, aprobación o rechazo, y registro, lo cual
+es precisamente lo que un Change Control Board (CCB) opera en la práctica.
+ 
+El modelo de calidad de producto de la norma ISO/IEC 25010:2023
+\cite{iso25010_2023} es el referente para juzgar la calidad de los
+requisitos no funcionales del ERS: sus características (adecuación
+funcional, eficiencia de desempeño, compatibilidad, usabilidad,
+confiabilidad, seguridad, mantenibilidad y portabilidad) proporcionan el
+vocabulario con el cual un NFR puede evaluarse como completo, medible y
+verificable, y no como una aspiración genérica.
+ 
+El SWEBOK v4.0, en su Área de Conocimiento 1 (Requisitos de Software),
+subapartados 1.6 a 1.8, consolida estas prácticas en tres bloques:
+validación de requisitos, gestión de requisitos, y herramientas de
+ingeniería de requisitos, presentándolos como continuación lógica de la
+elicitación y el análisis \cite{swebok_v4}. En la misma línea, Pohl
+\cite{pohl2025}, en la Parte V de su obra, desarrolla en profundidad la
+validación mediante inspecciones formales y la gestión del cambio como
+disciplinas complementarias: la primera detecta defectos antes de que el
+ERS se congele; la segunda gestiona su evolución controlada después de la
+línea base.
+ 
+Finalmente, el Change Control Board como mecanismo de gobierno de cambios
+está descrito en el PMBOK, 7.\textsuperscript{a} edición
+\cite{pmbok7}, dentro de las prácticas de gestión de la configuración y el
+alcance: un CCB es un grupo formalmente constituido, responsable de
+revisar, evaluar, aprobar, retrasar o rechazar cambios al proyecto, y de
+registrar y comunicar sus decisiones. Aplicado a un ERS, el CCB reemplaza
+la aprobación informal de cambios por una deliberación trazable y
+auditable.
 
 \subsection{Validación de requisitos}
 
@@ -152,6 +216,8 @@ PhD. Guerrero Ulloa Gleiston Cicerón
 
 % ===================== 13. REFERENCIAS =====================
 \section{Referencias}
+\bibliographystyle{IEEEtran}
+\bibliography{PE4_U4_CASTRO_MERA_SANCHEZ}
 
 % ===================== 14. ANEXOS =====================
 \section{Anexos}
