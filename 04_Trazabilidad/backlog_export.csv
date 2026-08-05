@@ -1,0 +1,53 @@
+Card ID,Card Name,Card URL,Card Description,Labels,Members,Due Date,Attachment Count,Attachment Links,Checklist Item Total Count,Checklist Item Completed Count,Vote Count,Comment Count,Last Activity Date,List ID,List Name,Board ID,Board Name,Archived,Start Date,Due Complete,Due Reminder,MoSCoW,Fuente del requisito,Estado de verificación
+6a73289eb57e4dad2d42fe39,EPIC - OPERACIÓN,https://trello.com/c/Q7z15YFe/30-epic-operaci%C3%B3n,,,,,0,,0,0,0,0,2026-08-05T12:12:14.766Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,,,
+6a7328a91fe1c912f132acb9,RF-VEN-01 — Registrar venta,https://trello.com/c/I6hPPf1r/31-rf-ven-01-registrar-venta,,,,,0,,0,0,0,0,2026-08-05T12:39:51.716Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a7328ab2919b2537392c019,RF-CAJ-01 — Cerrar turno y conciliar caja,https://trello.com/c/lEtiSzb8/32-rf-caj-01-cerrar-turno-y-conciliar-caja,,,,,0,,0,0,0,0,2026-08-05T12:40:21.159Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a7328b0d04e1ad64b452641,RF-ASI-01 — Registrar asistencia,https://trello.com/c/xwz0KtkB/33-rf-asi-01-registrar-asistencia,,,,,0,,0,0,0,0,2026-08-05T12:37:44.770Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a7328b5d12a01cce47ca620,RF-ASI-02 — Consultar asistencia,https://trello.com/c/tweqEEM7/34-rf-asi-02-consultar-asistencia,,,,,0,,0,0,0,0,2026-08-05T12:37:54.319Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a7328bbc318aaf3ba34a8bf,RF-NOV-01 — Gestionar novedades internas,https://trello.com/c/OSkpl5U0/35-rf-nov-01-gestionar-novedades-internas,,,,,0,,0,0,0,0,2026-08-05T12:40:35.239Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a7328c218d8b7d00799b53b,RF-INS-01 — Gestionar horario y disponibilidad de instructor,https://trello.com/c/VNLiCVg6/36-rf-ins-01-gestionar-horario-y-disponibilidad-de-instructor,,,,,0,,0,0,0,0,2026-08-05T12:40:47.277Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Should,ERS FabroGym,Pendiente
+6a7328c834594caa26af7d45,RF-RUT-01 — Crear y asignar rutina,https://trello.com/c/Vh3cuq0O/37-rf-rut-01-crear-y-asignar-rutina,,,,,0,,0,0,0,0,2026-08-05T12:41:02.458Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a7328ce2dd558982c9105f3,RF-RUT-02 — Versionar y ajustar rutina,https://trello.com/c/PSUnorDb/38-rf-rut-02-versionar-y-ajustar-rutina,,,,,0,,0,0,0,0,2026-08-05T12:41:13.018Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a7328d42bf9e2f0935c5840,RF-RUT-03 — Registrar seguimiento operativo,https://trello.com/c/V6TsOvMv/39-rf-rut-03-registrar-seguimiento-operativo,,,,,0,,0,0,0,0,2026-08-05T12:41:25.671Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Should,ERS FabroGym,Pendiente
+6a7328da3093096220709a61,RF-REP-01 — Consultar panel y reportes,https://trello.com/c/X8ZTMT7K/40-rf-rep-01-consultar-panel-y-reportes,,,,,0,,0,0,0,0,2026-08-05T12:41:37.264Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Should,ERS FabroGym,Pendiente
+6a73255f2966fbe39d335b44,EPIC – Clientes,https://trello.com/c/wlKXW10J/10-epic-clientes,,,,,0,,0,0,0,0,2026-08-05T11:58:23.250Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,,,
+6a732796b6561784298e0a55,RF-CLI-01 — Registrar cliente mínimo,https://trello.com/c/yHdlXHCL/18-rf-cli-01-registrar-cliente-m%C3%ADnimo,"El sistema registrará un cliente con código interno, nombre de uso y un medio de contacto.",,,,0,,2,0,0,0,2026-08-05T13:23:09.354Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a7327a2a56d5d645509b234,RF-CLI-02 — Buscar y consultar cliente,https://trello.com/c/xTL5oLJl/19-rf-cli-02-buscar-y-consultar-cliente,,,,,0,,2,0,0,0,2026-08-05T12:35:43.365Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a7327f854424ca7cec4fcd5,RF-CLI-03 — Actualizar o reactivar sin duplicar,https://trello.com/c/b8KPTfdC/20-rf-cli-03-actualizar-o-reactivar-sin-duplicar,,,,,0,,2,0,0,0,2026-08-05T12:35:54.975Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a732566eaa7469ff65bcce1,EPIC – Membresías,https://trello.com/c/4BU0CGc0/11-epic-membres%C3%ADas,,,,,0,,0,0,0,0,2026-08-05T11:58:30.047Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,,,
+6a7328387fb6332756d5c40e,RF-MEM-01 — Configurar planes y promociones,https://trello.com/c/WhNhb4mZ/21-rf-mem-01-configurar-planes-y-promociones,,,,,0,,0,0,0,0,2026-08-05T12:36:11.168Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a73283d52e0289db643cef4,RF-MEM-02 — Activar o renovar membresía,https://trello.com/c/asZR7xDO/22-rf-mem-02-activar-o-renovar-membres%C3%ADa,,,,,0,,0,0,0,0,2026-08-05T12:36:22.325Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a7328421e0ff5ba8b0b2f66,RF-MEM-03 — Consultar vigencia,https://trello.com/c/nG05vHCv/23-rf-mem-03-consultar-vigencia,,,,,0,,0,0,0,0,2026-08-05T12:36:32.190Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a732847f45176386003799d,RF-MEM-04 — Alertar vencimientos,https://trello.com/c/7AX2wZTJ/24-rf-mem-04-alertar-vencimientos,,,,,0,,0,0,0,0,2026-08-05T12:36:45.675Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a73256a712cabab28418834,EPIC – Pagos,https://trello.com/c/5u8quToA/12-epic-pagos,,,,,0,,0,0,0,0,2026-08-05T11:58:34.893Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,,,
+6a73285587534fe54663de54,RF-PAG-01 — Registrar pago y comprobante,https://trello.com/c/day3E3zH/25-rf-pag-01-registrar-pago-y-comprobante,,,,,0,,0,0,0,0,2026-08-05T12:42:01.236Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a732859716977a54e73a8d4,RF-PAG-02 — Resolver pago pendiente,https://trello.com/c/BoIkh1jY/26-rf-pag-02-resolver-pago-pendiente,,,,,0,,0,0,0,0,2026-08-05T12:42:12.808Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Should,ERS FabroGym,Pendiente
+6a732575387e471b96d4b13a,EPIC – Inventario,https://trello.com/c/IDXPbzD4/13-epic-inventario,,,,,0,,0,0,0,0,2026-08-05T11:58:45.770Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,,,
+6a73286d5dd6a41af88acb1b,RF-INV-01 — Administrar productos,https://trello.com/c/DErHOkLU/27-rf-inv-01-administrar-productos,,,,,0,,0,0,0,0,2026-08-05T12:38:29.908Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a732872e147e57c933a37f9,RF-INV-02 — Registrar movimientos de stock,https://trello.com/c/VzaKsuQ0/28-rf-inv-02-registrar-movimientos-de-stock,,,,,0,,0,0,0,0,2026-08-05T12:38:46.353Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a7328747fe1441d8907c251,RF-INV-03 — Alertar stock y rotación,https://trello.com/c/GW9TddEt/29-rf-inv-03-alertar-stock-y-rotaci%C3%B3n,,,,,0,,0,0,0,0,2026-08-05T12:39:00.470Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Should,ERS FabroGym,Pendiente
+6a732577feda27bebaec2feb,EPIC – Reportes,https://trello.com/c/K9KvXWkl/14-epic-reportes,,,,,0,,0,0,0,0,2026-08-05T11:58:47.309Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,,,
+6a732541636f0cdc26016776,EPIC – Autenticación,https://trello.com/c/b6lTyaxc/9-epic-autenticaci%C3%B3n,,,,,0,,0,0,0,0,2026-08-05T12:04:50.224Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,,,
+6a732649d1285c791bfee67b,RF-AUT-01 — Autenticar usuario,https://trello.com/c/d0ORuL5M/15-rf-aut-01-autenticar-usuario,"El sistema permitirá iniciar y cerrar sesión mediante credenciales individuales no biométricas.
+
+Trazabilidad
+
+← Documento fuente:
+ERS FabroGym v1.5.8
+
+← Evidencia:
+EV-ENTR02-07
+
+→ Caso de uso:
+CU-AUT-01
+
+→ Módulo:
+Autenticación
+
+→ Clase UML:
+Usuario
+
+→ Caso de prueba:
+CP-AUT-01",,,,0,,3,0,0,0,2026-08-05T12:32:08.608Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a732649c9c8a2c9b560ed59,RF-AUT-02 — Aplicar permisos por rol,https://trello.com/c/WmUBkaxa/16-rf-aut-02-aplicar-permisos-por-rol,"El sistema autorizará cada operación según el rol Administrador, Recepción o Instructor y denegará por defecto las no asignadas.",,,,0,,2,0,0,0,2026-08-05T12:34:58.366Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Must,ERS FabroGym,Pendiente
+6a73264abb139e1cef3be726,RF-AUT-03 — Auditar cambios críticos,https://trello.com/c/4mV4Fruy/17-rf-aut-03-auditar-cambios-cr%C3%ADticos,"El sistema registrará autor, fecha, acción y valores anterior/nuevo para pagos, precios, inventario, membresías y permisos.",,,,0,,2,0,0,0,2026-08-05T12:35:13.442Z,6a731ea7de01edfc9de592b1,Backlog,6a731d35989219fc5dbaffbe,FabroGym,false,,false,,Should,ERS FabroGym,Pendiente
