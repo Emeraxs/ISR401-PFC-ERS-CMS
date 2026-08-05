@@ -735,7 +735,7 @@ Correcci\'on de defectos cr\'iticos/mayores                     & 1 & 1.5 & 1.5 
 
 
 % ===================== 3. CORRECCIONES APLICADAS =====================
-\subsection{Correcciones aplicadas}
+\section{Correcciones aplicadas}
 Se corrigi\'o el 100\,\% de los defectos Cr\'iticos y Mayores identificados en la inspecci\'on Fagan (Anexo B): 1 defecto Cr\'itico y 9 Mayores, 10 en total. Los 6 defectos Menores restantes no se corrigieron en esta entrega y se justifican al final de esta secci\'on.
  
 % ============================================================
@@ -898,13 +898,237 @@ RFC-03 & Se acepta acotar el alcance de RNF-SEG-03 al no existir aún un modo de
 
 
 % ===================== 5. TRAZABILIDAD EN HERRAMIENTA CASE =====================
+
 \section{Trazabilidad en herramienta CASE}
+
+Para gestionar la trazabilidad de los requisitos del sistema \textbf{FabroGym} se implementó un tablero en Trello, el cual permite organizar el backlog del proyecto y realizar el seguimiento de los requisitos durante su ciclo de vida.
 
 \subsection{Estructura del tablero}
 
+El tablero fue organizado mediante cinco listas que representan el flujo de trabajo de los requisitos:
+
+\begin{itemize}
+    \item \textbf{Backlog}: contiene todos los requisitos pendientes de análisis.
+    \item \textbf{Análisis}: requisitos que se encuentran en revisión.
+    \item \textbf{Aprobado}: requisitos validados por el equipo.
+    \item \textbf{Desarrollo}: requisitos en proceso de implementación.
+    \item \textbf{Hecho}: requisitos implementados y verificados.
+\end{itemize}
+
+Durante la elaboración del tablero se registraron las épicas del sistema, como \textbf{EPIC – Autenticación}, y los requisitos funcionales correspondientes, por ejemplo \textbf{RF-AUT-01 – Autenticar usuario}. En total, el tablero contiene 32 tarjetas organizadas dentro del backlog del proyecto.
+
+\subsection{Campos personalizados}
+
+Con el fin de facilitar la administración de los requisitos, se configuraron los siguientes campos personalizados en Trello.
+
+\begin{table}[H]
+\centering
+\caption{Campos personalizados utilizados en el tablero Trello}
+\begin{tabular}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Campo} & \textbf{Descripción} \\ \hline
+Prioridad MoSCoW & Permite clasificar la prioridad de cada requisito. \\ \hline
+Fuente del requisito & Identifica el documento del cual proviene el requisito funcional. \\ \hline
+Estado de verificación & Indica el estado de validación del requisito dentro del proyecto. \\ \hline
+\end{tabular}
+\label{tab:camposTrello}
+\end{table}
+
+Estos campos permiten identificar rápidamente la prioridad, el origen y el estado de verificación de cada requisito registrado en el tablero.
+
 \subsection{Matriz de trazabilidad}
 
-\subsection{Evidencia}
+La matriz de trazabilidad se construyó relacionando el documento fuente (ERS FabroGym v1.5.8), los requisitos funcionales, los casos de uso, las clases del diagrama UML, el módulo correspondiente y los casos de prueba definidos para cada funcionalidad.
+
+La Tabla~\ref{tab:trazabilidad} presenta la matriz de trazabilidad del proyecto, compuesta por quince requisitos funcionales distribuidos entre los módulos de Seguridad, Clientes, Membresías, Pagos, Asistencia e Inventario.
+\begin{table}[H]
+\centering
+\scriptsize
+\caption{Matriz de trazabilidad del sistema FabroGym}
+\label{tab:trazabilidad}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{3cm}|p{1.8cm}|p{3.8cm}|p{3.8cm}|p{2.2cm}|p{2.5cm}|}
+\hline
+\textbf{Stakeholder / Documento} &
+\textbf{RF} &
+\textbf{Caso de Uso} &
+\textbf{Clase UML} &
+\textbf{Módulo} &
+\textbf{Caso de Prueba} \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-AUT-01 &
+CU-01 Autenticar usuario &
+Usuario, Rol &
+Seguridad &
+HU-01 / Gherkin HU-01 \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-AUT-02 &
+CU-02 Aplicar permisos por rol &
+Usuario, Rol &
+Seguridad &
+HU-02 / Gherkin HU-02 \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-AUT-03 &
+Auditoría (relacionado con autenticación) &
+EventoAuditoria, Usuario &
+Auditoría &
+HU-03 \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-CLI-01 &
+CU-03 Registrar cliente mínimo &
+Cliente &
+Clientes &
+HU-03 / Gherkin HU-03 \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-CLI-02 &
+CU-04 Buscar y consultar cliente &
+Cliente, Membresía, Pago, Asistencia &
+Clientes &
+HU-04 / Gherkin HU-04 \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-CLI-03 &
+CU-05 Actualizar o reactivar sin duplicar &
+Cliente &
+Clientes &
+HU-05 / Gherkin HU-05 \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-MEM-01 &
+CU-06 Configurar planes y promociones &
+Plan &
+Membresías &
+HU-06 / Gherkin HU-06 \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-MEM-02 &
+CU-07 Activar o renovar membresía &
+Membresía, Plan, Cliente &
+Membresías &
+HU-07 / Gherkin HU-07 \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-MEM-03 &
+CU-08 Consultar vigencia &
+Membresía, Cliente &
+Membresías &
+HU-08 / Gherkin HU-08 \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-MEM-04 &
+CU-09 Alertar vencimientos &
+Membresía &
+Membresías &
+HU-09 / Gherkin HU-09 \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-PAG-01 &
+CU-10 Registrar pago y comprobante &
+Pago, Cliente &
+Pagos &
+HU-10 / Gherkin HU-10 \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-ASI-01 &
+CU-11 Registrar asistencia &
+Asistencia, Cliente &
+Asistencia &
+HU-11 / Gherkin HU-11 \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-ASI-02 &
+CU-12 Consultar asistencia &
+Asistencia, Cliente &
+Asistencia &
+HU-12 / Gherkin HU-12 \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-INV-01 &
+CU-13 Administrar productos &
+Producto &
+Inventario &
+HU-13 / Gherkin HU-13 \\
+\hline
+
+ERS FabroGym v1.5.8 &
+RF-INV-02 &
+CU-14 Registrar movimientos de stock &
+MovimientoStock, Producto &
+Inventario &
+HU-14 / Gherkin HU-14 \\
+\hline
+
+\end{tabular}
+\end{table}
+
+% Aquí pegas tu tabla de trazabilidad
+% \input{tablas/trazabilidad.tex}
+% o directamente la tabla.
+
+\subsection{Capturas del tablero}
+
+La Figura~\ref{fig:tablero} muestra la estructura general del tablero desarrollado en Trello.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figuras/trelloprincipal.jpg}
+\caption{Vista general del tablero Trello del proyecto FabroGym.}
+\label{fig:tablero}
+\end{figure}
+
+Adicionalmente, se incluyen capturas del detalle de tres tarjetas del tablero, donde se observan los campos personalizados configurados, la fuente del requisito, el estado de verificación y la información correspondiente a cada requisito funcional.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figuras/RF-AUT-01.jpg}
+    \caption{Detalle de la tarjeta RF-AUT-01 – Autenticar usuario.}
+    \label{fig:rfaut01}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figuras/RF-CLI-01.jpg}
+    \caption{Detalle de la tarjeta RF-CLI-01 – Registrar cliente mínimo.}
+    \label{fig:rfcli01}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figuras/RF-MEM-02.jpg}
+    \caption{Detalle de la tarjeta RF-MEM-02 – Activar o renovar membresía.}
+    \label{fig:rfmem02}
+\end{figure}
+
+\subsection{Referencia al archivo CSV}
+
+Como respaldo de la información registrada en Trello, el backlog fue exportado en formato CSV. El archivo se encuentra almacenado en el repositorio del proyecto con el nombre:
+
+\begin{center}
+\texttt{04\_Trazabilidad/backlog\_export.csv}
+\end{center}
+
+Este archivo contiene la información exportada de las tarjetas del tablero y constituye el Anexo D solicitado en la guía de la práctica.
+
+
 
 % ===================== 6. LÍNEA BASE CON GIT =====================
 \section{Línea base con Git}
@@ -1049,7 +1273,6 @@ D-16 & Sec.9 matriz\_\allowbreak trazabilidad.csv & RF-INS-01 no aparece como fi
  
 
 \subsection*{Anexo C -- Formularios RFC y Acta del CCB}
-\subsection*{Anexo C -- Formularios RFC y Acta del CCB}
 
 A continuación se presentan los formularios completos de las tres solicitudes de cambio y el Acta del Change Control Board, firmados por los tres integrantes del equipo.
 
@@ -1088,7 +1311,47 @@ A continuación se presentan los formularios completos de las tres solicitudes d
 \label{fig:acta_ccb_p2}
 \end{figure}
 \subsection*{Anexo D -- Exportación CSV del backlog}
+El backlog del proyecto FabroGym fue exportado desde Trello en formato CSV.
+Debido al tamaño del archivo y para conservar su formato original, este se encuentra disponible en el repositorio del proyecto en la siguiente ubicación:
+
+\begin{center}
+\texttt{04\_Trazabilidad/backlog\_export.csv}
+\end{center}
+ El archivo contiene la información correspondiente a las tarjetas del tablero, incluyendo el nombre del requisito, estado, etiquetas, fechas y demás atributos exportados por Trello.
 \subsection*{Anexo E -- Capturas del tablero CASE y del repositorio Git}
+
+La Figura~\ref{fig:tablero} muestra la estructura general del tablero desarrollado en Trello.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figuras/trelloprincipal.jpg}
+\caption{Vista general del tablero Trello del proyecto FabroGym.}
+\label{fig:tablero}
+\end{figure}
+
+Adicionalmente, se incluyen capturas del detalle de tres tarjetas del tablero, donde se observan los campos personalizados configurados, la fuente del requisito, el estado de verificación y la información correspondiente a cada requisito funcional.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figuras/RF-AUT-01.jpg}
+    \caption{Detalle de la tarjeta RF-AUT-01 – Autenticar usuario.}
+    \label{fig:rfaut01}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figuras/RF-CLI-01.jpg}
+    \caption{Detalle de la tarjeta RF-CLI-01 – Registrar cliente mínimo.}
+    \label{fig:rfcli01}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figuras/RF-MEM-02.jpg}
+    \caption{Detalle de la tarjeta RF-MEM-02 – Activar o renovar membresía.}
+    \label{fig:rfmem02}
+\end{figure}
+
 \subsection*{Anexo F -- Referencias IEEE y declaración de uso de IA}
 
 \end{document}
