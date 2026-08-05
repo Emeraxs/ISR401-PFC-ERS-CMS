@@ -352,6 +352,60 @@ evolución controlada del proyecto.
  
 
 \subsection{Herramientas CASE para IR}
+\subsubsection{Clasificación}
+ 
+Las herramientas CASE (Computer-Aided Software Engineering) se clasifican
+tradicionalmente en tres categorías \cite{swebok_v4, pohl2025}:
+ 
+\begin{itemize}
+  \item \textbf{Upper CASE:} orientadas a las fases tempranas del ciclo de
+  vida --- elicitación, análisis, modelado y especificación de
+  requisitos---, como los gestores de requisitos con soporte de
+  trazabilidad.
+  \item \textbf{Lower CASE:} orientadas a las fases posteriores ---
+  implementación, generación de código, pruebas---.
+  \item \textbf{Integrated CASE (I-CASE):} cubren el ciclo de vida
+  completo, integrando repositorio, modelado, gestión de cambios y
+  generación de artefactos en una sola plataforma.
+\end{itemize}
+ 
+Herramientas como Jira o Trello, usadas con tableros de backlog y campos
+personalizados, funcionan en la práctica como herramientas upper CASE
+ligeras para gestión de requisitos, mientras que suites como IBM DOORS o
+Jama Connect corresponden más estrictamente a herramientas I-CASE
+especializadas en requisitos con trazabilidad nativa.
+ 
+\subsubsection{Funcionalidades esperables}
+ 
+Para que una herramienta CASE soporte adecuadamente la gestión de
+requisitos, el SWEBOK v4.0 \cite{swebok_v4} y Pohl \cite{pohl2025}
+coinciden en que debe ofrecer, como mínimo: un \textbf{repositorio}
+centralizado de requisitos; soporte para \textbf{atributos}
+personalizados por requisito; \textbf{trazabilidad} bidireccional
+enlazable; capacidad de \textbf{baselining} (fijar y comparar versiones);
+\textbf{control de cambios} integrado (flujos de aprobación); soporte de
+\textbf{colaboración} entre stakeholders distribuidos; e
+\textbf{integración con sistemas de control de versiones} (VCS) para
+sincronizar el estado del requisito con el del código o la documentación
+asociada.
+ 
+\subsubsection{Criterios de selección, limitaciones y costos}
+ 
+La selección de una herramienta CASE debe considerar la cobertura
+funcional real frente a las necesidades del proyecto, la escalabilidad
+para equipos y volúmenes de requisitos crecientes, la facilidad de
+integración con el resto del ecosistema de desarrollo (VCS, CI/CD), el
+costo de licenciamiento (herramientas como Jira o Trello ofrecen planes
+gratuitos limitados, mientras que DOORS o Jama Connect son soluciones
+empresariales de costo considerablemente mayor) y la curva de aprendizaje
+del equipo. Entre las limitaciones más comunes de las herramientas
+livianas orientadas a tableros ágiles (Jira, Trello) está la ausencia
+nativa de trazabilidad formal hacia atrás (a los stakeholders o
+documentos de origen), la cual debe suplirse mediante campos
+personalizados y disciplina del equipo, a diferencia de las herramientas
+especializadas en requisitos, que la incorporan como funcionalidad
+central \cite{pohl2025}.
+
 
 \subsection{IR en procesos ágiles}
 
