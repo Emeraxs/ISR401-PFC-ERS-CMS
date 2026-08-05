@@ -1135,22 +1135,180 @@ Este archivo contiene la información exportada de las tarjetas del tablero y co
 
 % ===================== 7. COMPARATIVA DE HERRAMIENTAS CASE =====================
 \section{Comparativa de herramientas CASE}
+La Tabla \ref{tab:case} presenta una comparación entre cuatro herramientas CASE utilizadas para la gestión de requisitos. La evaluación considera seis criterios relevantes para el desarrollo del proyecto FabroGym y se basa en la experiencia de uso, documentación técnica y necesidades del equipo.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\renewcommand{\arraystretch}{1.4}
+\caption{Comparación de herramientas CASE}
+\label{tab:case}
+\begin{tabular}{|p{2.8cm}|p{3cm}|p{2.8cm}|p{2.8cm}|p{2cm}|p{2cm}|p{2cm}|}
+\hline
+\textbf{Herramienta} &
+\textbf{Funcionalidades de IR} &
+\textbf{Trazabilidad} &
+\textbf{Colaboración} &
+\textbf{Integración con VCS} &
+\textbf{Costo} &
+\textbf{Curva de aprendizaje} \\
+\hline
+
+Trello &
+Permite organizar requisitos mediante tarjetas, listas y etiquetas. Resulta suficiente para proyectos académicos pequeños y medianos. &
+La trazabilidad debe construirse manualmente mediante enlaces, etiquetas y campos personalizados. &
+Facilita el trabajo colaborativo en tiempo real y la asignación de tareas. &
+Se integra con GitHub mediante Power-Ups y automatizaciones. &
+Posee versión gratuita suficiente para proyectos universitarios. &
+Baja; puede utilizarse sin capacitación especializada. \\
+\hline
+
+Jira &
+Administra historias de usuario, épicas y backlog con mayor nivel de control que Trello. &
+Ofrece trazabilidad entre requisitos, incidencias y tareas de desarrollo. &
+Excelente colaboración mediante flujos de trabajo configurables. &
+Integración nativa con GitHub, Bitbucket y otras plataformas. &
+Modelo de suscripción; versión gratuita limitada para equipos pequeños. &
+Media; requiere familiarizarse con proyectos Scrum y configuraciones. \\
+\hline
+
+IBM DOORS &
+Especializado en ingeniería de requisitos para proyectos críticos y de gran tamaño. &
+Mantiene trazabilidad bidireccional entre requisitos, pruebas y cambios. &
+Permite trabajo colaborativo, aunque orientado a organizaciones grandes. &
+La integración con sistemas de control de versiones requiere configuración adicional. &
+Costo elevado, generalmente utilizado en empresas grandes. &
+Alta; demanda capacitación específica para aprovechar todas sus funciones. \\
+\hline
+
+Jama Connect &
+Integra requisitos, riesgos, pruebas y validación dentro de una misma plataforma. &
+Proporciona trazabilidad completa desde el requisito hasta la verificación. &
+Facilita la revisión y aprobación colaborativa entre diferentes interesados. &
+Cuenta con integración con Git y otras herramientas ALM mediante conectores. &
+Costo alto, orientado al sector empresarial. &
+Media-alta debido a la cantidad de funcionalidades disponibles. \\
+\hline
+
+\end{tabular}
+\end{table}
+
+\subsection*{Recomendación}
+
+Para el desarrollo del proyecto FabroGym se considera que \textbf{Trello} es la herramienta más adecuada, debido a que ofrece una interfaz sencilla, facilita la organización del backlog, permite implementar la trazabilidad mediante campos personalizados y etiquetas, y posee integración con GitHub sin costos adicionales. Aunque herramientas como Jira, IBM DOORS y Jama Connect ofrecen funcionalidades de trazabilidad más avanzadas, sus costos y complejidad no se justifican para un proyecto académico de las características del presente trabajo.
 
 % ===================== 10. IR TRADICIONAL FRENTE A IR ÁGIL =====================
 \section{IR tradicional frente a IR ágil}
 
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\caption{Comparación entre IR tradicional e IR ágil}
+\label{tab:tradicionalAgil}
+\begin{tabular}{|p{3.3cm}|p{5.3cm}|p{5.3cm}|}
+\hline
+\textbf{Dimensión} &
+\textbf{IR Tradicional} &
+\textbf{IR Ágil} \\
+\hline
+
+Documentación &
+Documentación extensa y formal antes del desarrollo. &
+Documentación ligera, enfocada en historias de usuario y criterios de aceptación. \\
+\hline
+
+Gestión del cambio &
+Los cambios requieren procesos formales de aprobación. &
+Los cambios pueden incorporarse durante cada iteración del proyecto. \\
+\hline
+
+Participación de stakeholders &
+Participación principalmente durante el levantamiento y validación inicial. &
+Participación continua mediante retroalimentación frecuente. \\
+\hline
+
+Herramientas &
+DOORS, Jama Connect, Enterprise Architect, ReqView. &
+Trello, Jira, Azure DevOps, GitHub Projects. \\
+\hline
+
+Velocidad &
+Mayor tiempo en análisis y documentación inicial. &
+Entregas rápidas mediante iteraciones cortas. \\
+\hline
+
+Escalabilidad &
+Adecuada para proyectos regulados o de gran complejidad. &
+Adecuada para proyectos con cambios frecuentes y equipos pequeños o medianos. \\
+\hline
+
+\end{tabular}
+\end{table}
+
+\textbf{Contexto de aplicación.}
+
+La Ingeniería de Requisitos tradicional resulta conveniente cuando el proyecto requiere alta documentación, cumplimiento normativo o estabilidad en los requisitos. Por otro lado, la Ingeniería de Requisitos ágil es más apropiada para proyectos donde los requisitos evolucionan constantemente y se necesita retroalimentación continua de los stakeholders, como ocurrió en el desarrollo del sistema FabroGym.
+
 % ===================== 11. CONCLUSIONES CRÍTICAS =====================
 \section{Conclusiones críticas}
 \begin{enumerate}
-\item
-\item
-\item
-\item
-\item
+
+\item La utilización de Trello como herramienta CASE permitió mantener una trazabilidad clara entre los requisitos funcionales, los casos de uso, las clases UML y las historias de usuario, facilitando el seguimiento del avance del proyecto sin incrementar significativamente la complejidad de la gestión.
+
+\item La elaboración de la matriz de trazabilidad permitió identificar la relación existente entre los diferentes artefactos de Ingeniería de Requisitos, reduciendo inconsistencias y facilitando la validación de los requisitos implementados durante el desarrollo del sistema FabroGym.
+
+\item La comparación entre herramientas CASE evidenció que soluciones empresariales como IBM DOORS y Jama Connect ofrecen mecanismos de trazabilidad más robustos; sin embargo, para un proyecto académico el uso de Trello representa un equilibrio adecuado entre funcionalidad, facilidad de uso y costo.
+
+\item La aplicación de principios de Ingeniería de Requisitos ágil permitió adaptar los requisitos durante el desarrollo del proyecto sin afectar la organización del backlog ni la consistencia entre los artefactos generados.
+
+\item La integración entre la herramienta CASE y el repositorio Git permitió mantener evidencia del proceso de desarrollo mediante commits, etiquetas y documentación versionada, fortaleciendo la gestión de cambios y la reproducibilidad del proyecto.
+
 \end{enumerate}
 
 % ===================== 12. DISTRIBUCIÓN DEL TRABAJO =====================
 \section{Distribución del trabajo}
+Con el propósito de organizar las actividades de la práctica experimental y garantizar el cumplimiento de los entregables establecidos en la guía, el equipo distribuyó el trabajo en función de las diferentes etapas del proceso de Ingeniería de Requisitos. Cada integrante fue responsable de una parte específica del proyecto, así como de la documentación y los artefactos correspondientes.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\caption{Distribución del trabajo del equipo}
+\label{tab:distribucion}
+\begin{tabular}{|c|p{3cm}|p{4.5cm}|p{4cm}|p{4cm}|}
+\hline
+\textbf{Parte} &
+\textbf{Responsable} &
+\textbf{Actividades desarrolladas} &
+\textbf{Archivos y carpetas} &
+\textbf{Secciones del informe} \\
+\hline
+
+1 &
+Ariel Castro &
+Paso 1: Inspección técnica mediante el método Fagan, elaboración de listas de verificación, registro de defectos y métricas de inspección. &
+\texttt{02\_Inspeccion/} &
+Capítulo 3 (Fundamentos 3.1--3.2), Capítulo 4 (Inspección) y Capítulo 5 (Correcciones). \\
+\hline
+
+2 &
+Erick Mera &
+Paso 2: Control de Cambios (CCB/RFC) y Paso 3: Trazabilidad mediante herramienta CASE (Trello), elaboración de la matriz de trazabilidad y exportación del backlog. &
+\texttt{03\_CCB/} y \texttt{04\_Trazabilidad/} &
+Capítulo 3 (Fundamentos 3.3--3.4), Capítulo 6 (CCB) y Capítulo 7 (Trazabilidad). \\
+\hline
+
+3 &
+Rosselyn Sanchez &
+Paso 4: Gestión del repositorio Git, compilación del informe final en \LaTeX, elaboración del análisis comparativo de herramientas CASE, comparación entre IR tradicional e IR ágil y redacción de conclusiones. &
+\texttt{05\_Informe/}, \texttt{06\_Evidencias/}, \texttt{README.md}, \texttt{CHANGELOG.md} y etiquetas (\texttt{git tag}). &
+Capítulo 3 (Fundamentos 3.5), Capítulo 8 (Git), Capítulos 9--11 (Comparativa, IR Tradicional vs. Ágil y Conclusiones). \\
+\hline
+
+\end{tabular}
+\end{table}
+
+La distribución permitió dividir las responsabilidades de acuerdo con las etapas de la práctica, facilitando el trabajo colaborativo, el control de versiones mediante Git y la integración de los entregables en un único repositorio.
+
 
 % ===================== 13. REFERENCIAS =====================
 \section{Referencias}
@@ -1272,7 +1430,7 @@ D-16 & Sec.9 matriz\_\allowbreak trazabilidad.csv & RF-INS-01 no aparece como fi
 \normalsize
  
 
-\subsection*{Anexo C -- Formularios RFC y Acta del CCB}
+\subsection{Anexo C -- Formularios RFC y Acta del CCB}
 
 A continuación se presentan los formularios completos de las tres solicitudes de cambio y el Acta del Change Control Board, firmados por los tres integrantes del equipo.
 
@@ -1353,5 +1511,18 @@ Adicionalmente, se incluyen capturas del detalle de tres tarjetas del tablero, d
 \end{figure}
 
 \subsection*{Anexo F -- Referencias IEEE y declaración de uso de IA}
+\bibliographystyle{IEEEtran}
+\bibliography{PE4_U4_CASTRO_MERA_SANCHEZ}
+\begin{center}
+\texttt{Declaración de uso de IA}
+\end{center}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figuras/declaracion_IA.jpg}
+    \caption{Declaración de IA}
+    \label{fig:rfmem02}
+\end{figure}
 
 \end{document}
