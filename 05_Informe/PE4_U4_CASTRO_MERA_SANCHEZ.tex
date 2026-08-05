@@ -68,6 +68,14 @@ PhD. Guerrero Ulloa Gleiston Cicerón
 \tableofcontents
 \newpage
 
+\listoftables
+\addcontentsline{toc}{section}{Índice de tablas}
+\newpage
+
+\listoffigures
+\addcontentsline{toc}{section}{Índice de figuras}
+\newpage
+
 % ===================== 2. RESUMEN Y OBJETIVOS =====================
 \section{Resumen y objetivos}
 
@@ -482,19 +490,344 @@ del usuario final.
 \section{Inspección Fagan}
 
 \subsection{Roles y alcance}
+Los roles asignados durante la inspección Fagan se presentan en la
+Tabla~\ref{tab:roles_fagan}.
+
+\begin{table}[H]
+\centering
+\caption{Asignación de roles durante la inspección Fagan}
+\label{tab:roles_fagan}
+
+\renewcommand{\arraystretch}{1.3}
+
+\begin{tabularx}{0.8\textwidth}{>{\bfseries}l X}
+\toprule
+Rol & Integrante \\
+\midrule
+Moderador & Erick Mera Arias \\
+Lector & Erick Mera Arias \\
+Inspector 1 & Ariel Castro Bajaña \\
+Inspector 2 & Rosselyn Sanchez Centeno \\
+\bottomrule
+\end{tabularx}
+
+\end{table}
+\textbf{Nota metodológica.} Debido a que el equipo estuvo conformado por tres
+integrantes, Erick Mera desempeñó simultáneamente los roles de Moderador y
+Lector, considerando su conocimiento previo del ERS como parte del equipo autor
+del proyecto \textit{FabroGym}. Los roles de Inspector fueron asignados a los
+integrantes sin participación directa en la redacción original del documento,
+con el fin de preservar la independencia de criterio durante la inspección.
 
 \subsection{Preparación individual}
+Cada inspector revisó el alcance de forma independiente, completando su copia del Anexo A sobre las seis propiedades ISO/IEC/IEEE 29148:2018. Ariel Castro reportó 8 hallazgos (mínimo exigido: 6); Rosselyn Sanchez reportó 9. (05/08/2026)
 
 \subsection{Acta de la reunión}
+La reunión formal de inspección tuvo una duración aproximada de
+\textbf{62 minutos}. Durante la sesión, el Lector presentó y parafraseó cada una
+de las secciones inspeccionadas, mientras que los Inspectores expusieron los
+defectos detectados durante su revisión individual. El Moderador registró y
+consolidó los hallazgos en el Anexo B, evitando discutir posibles soluciones
+durante la reunión, conforme a la metodología Fagan.
+
+Como resultado de la sesión se obtuvieron los siguientes resultados:
+
+\begin{itemize}
+\item 17 hallazgos brutos identificados.
+\item 1 hallazgo coincidente entre ambos inspectores (validación pendiente de stakeholders en los 23 requisitos funcionales).
+\item 16 defectos únicos consolidados.
+\item 1 defecto clasificado como crítico.
+\item 9 defectos clasificados como mayores.
+\end{itemize}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{figuras/reunion_inspeccion.jpg}
+\caption{Reunión de inspección Fagan del equipo (duración: 62 minutos)}
+\label{fig:reunion_inspeccion}
+\end{figure}
 
 \subsection{Registro de defectos}
 
+\scriptsize
+\begin{longtable}{
+  >{\raggedright\arraybackslash}p{0.1cm}
+  >{\raggedright\arraybackslash}p{2.0cm}
+  >{\raggedright\arraybackslash}p{4.5cm}
+  >{\raggedright\arraybackslash}p{2.0cm}
+  >{\raggedright\arraybackslash}p{1.0cm}
+  >{\raggedright\arraybackslash}p{1.5cm}
+  >{\raggedright\arraybackslash}p{1.5cm}
+  >{\centering\arraybackslash}p{1.0cm}
+}
+\caption{Anexo B --- Registro de defectos consolidado (Inspecci\'on Fagan, PE4). Moderador: Erick Mera; Lector: Erick Mera; Inspector 1: Ariel Castro; Inspector 2: Rosselyn S\'anchez.} \label{tab:anexoB} \\
+\toprule
+\textbf{N} & \textbf{Secci\'on (ERS)} & \textbf{Descripci\'on del defecto} & \textbf{Tipo} & \textbf{Severidad} & \textbf{Requisito afectado} & \textbf{Detectado por} & \textbf{Corregido} \\
+\midrule
+\endfirsthead
+ 
+\multicolumn{8}{c}{\tablename\ \thetable{} -- Continuaci\'on} \\
+\toprule
+\textbf{N} & \textbf{Secci\'on (ERS)} & \textbf{Descripci\'on del defecto} & \textbf{Tipo} & \textbf{Severidad} & \textbf{Requisito afectado} & \textbf{Detectado por} & \textbf{Corregido} \\
+\midrule
+\endhead
+ 
+\midrule
+\multicolumn{8}{r}{\textit{Contin\'ua en la siguiente p\'agina}} \\
+\endfoot
+ 
+\bottomrule
+\endlastfoot
+ 
+D-01 & Sec.4, RF-AUT-01 & La salida ``rechazo gen\'erico'' del login no especifica su contenido/formato ni si distingue credencial inv\'alida de cuenta inactiva. & Ambig\"uedad & Menor & RF-AUT-01 & Ariel Castro & N \\
+D-02 & Sec.9 RD-PRI-02 / Sec.4 RF-AUT-03 & RF-AUT-03 (auditar cambios cr\'iticos) tiene prioridad Should pese a derivar de la obligaci\'on legal RD-PRI-02 (LOPDP). & Consistencia & Mayor & RF-AUT-03 & Ariel Castro & S \\
+D-03 & Sec.4, campo ``Estado'' (23 RF) & Todos los requisitos funcionales declaran ``validaci\'on con stakeholders pendiente'', sin responsable ni fecha l\'imite de cierre. & Completitud & Mayor & RF-AUT-01..\allowbreak RF-REP-01 (todos) & Ariel Castro y Rosselyn S\'anchez (coincidente) & S \\
+D-04 & Sec.4 RF-CLI-01 / Sec.9 RD-PRI-03 & No existe un requisito funcional que capture o audite el consentimiento exigido como precondici\'on de RF-CLI-01. & Completitud & Mayor & RF-CLI-01 & Ariel Castro & S \\
+D-05 & Sec.4 RF-PAG-01 & No se especifica el formato/medio del comprobante de pago (descargable, imprimible, solo en pantalla). & Ambig\"uedad & Menor & RF-PAG-01 & Ariel Castro & N \\
+D-06 & Sec.4 RF-MEM-02 & No se define si renovar una membres\'ia a\'un vigente extiende la fecha de vencimiento o la sobrescribe desde la fecha de pago. & Ambig\"uedad & Mayor & RF-MEM-02 & Ariel Castro & S \\
+D-07 & Sec.8 RNF-SEG-03 & La condici\'on ``despliegue conectado'' que activa TLS 1.2+ no est\'a acotada; no aclara el caso de despliegue offline/LAN. & Ambig\"uedad & Menor & RNF-SEG-03 & Ariel Castro & N \\
+D-08 & Sec.4 RF-CLI-03 & El criterio de ``coincidencia'' que dispara la advertencia de cliente duplicado no est\'a definido (exacto vs. difuso). & Verificabilidad & Mayor & RF-CLI-03 & Ariel Castro & S \\
+D-09 & Sec.6 MU-47 / Sec.4 RF-ASI-01 / Sec.8 RNF-SEG-02 & El mockup vigente MU-47 incluye captura de huella digital, contradiciendo ``asistencia no biom\'etrica'' y el 0\% de captura biom\'etrica exigido. & Consistencia & Cr\'itico & RF-ASI-01 / RNF-SEG-02 & Rosselyn S\'anchez & S \\
+D-10 & Sec.6 MU-37 / Sec.4 RF-CLI-01 & MU-37 est\'a marcado como pendiente de ``minimizaci\'on de campos'' sin RFC ni responsable ni plazo de correcci\'on. & Trazabilidad & Mayor & RF-CLI-01 & Rosselyn S\'anchez & S \\
+D-11 & Sec.4 RF-INV-02 & No se define qui\'en autoriza un ``ajuste autorizado'' ni bajo qu\'e condiciones se permite saldo negativo de stock. & Ambig\"uedad & Menor & RF-INV-02 & Rosselyn S\'anchez & N \\
+D-12 & Sec.6 MU-48, MU-49, MU-17, MU-29, MU-60 & Cinco mockups de Instructor/Rutinas quedan marcados como pendientes de correcci\'on sin RFC ni acta que los gestione. & Trazabilidad & Mayor & RF-INS-01 / RF-RUT-01 / RF-RUT-02 / RF-RUT-03 & Rosselyn S\'anchez & S \\
+D-13 & Sec.4 RF-CAJ-01 & No se define el mecanismo ni el plazo permitido para la ``correcci\'on auditada'' de un turno de caja ya cerrado. & Verificabilidad & Menor & RF-CAJ-01 & Rosselyn S\'anchez & N \\
+D-14 & Sec.8 RNF-ED-01 / Sec.13 & Ning\'un RF ni el plan de pruebas describe c\'omo se generar\'an o validar\'an los 10\,000 clientes sint\'eticos exigidos por la prueba de carga. & Verificabilidad & Menor & RNF-ED-01 & Rosselyn S\'anchez & N \\
+D-15 & Sec.4 RF-RUT-01 / RF-RUT-03 & RF-RUT-03 excluye expl\'icitamente datos sensibles (diagn\'osticos, lesiones, peso, medidas); RF-RUT-01, que crea la rutina, no repite esa restricci\'on. & Consistencia & Mayor & RF-RUT-01 & Rosselyn S\'anchez & S \\
+D-16 & Sec.9 matriz\_\allowbreak trazabilidad.csv & RF-INS-01 no aparece como fila en la matriz de trazabilidad extendida; queda como requisito hu\'erfano en ese artefacto. & Trazabilidad & Mayor & RF-INS-01 & Rosselyn S\'anchez & S \\
+ 
+\end{longtable}
+\normalsize
 \subsection{Métricas de inspección}
+P\'aginas efectivas inspeccionadas (Sec.\,4 Requisitos funcionales a Sec.\,9 Legales, \texttt{ERS\_SRS\_2A\_v1.5.4}, pag.\ 11--28, verificado contra la matriz de trazabilidad, pag.\ 78): \textbf{19}.
+ 
+\subsubsection{ Densidad de defectos}
+ 
+\begin{table}[H]
+\centering
+\begin{tabular}{lc}
+\toprule
+\textbf{Indicador} & \textbf{Valor} \\
+\midrule
+Total de defectos consolidados & 16 \\
+P\'aginas efectivas inspeccionadas & 19 \\
+Densidad (defectos / p\'agina) & 0.84 \\
+\bottomrule
+\end{tabular}
+\caption{Densidad de defectos del ERS.}
+\end{table}
+ 
+\textit{Interpretaci\'on:} con 0.84 defectos por p\'agina, el ERS presenta una densidad de defectos moderada-alta para un documento que ya hab\'ia pasado revisiones previas, lo que indica que la secci\'on de requisitos funcionales todav\'ia necesita m\'as rigor antes de avanzar a dise\~no.
+ 
+% ============================================================
+% 2. DISTRIBUCION POR TIPO
+% ============================================================
+\subsubsection{ Distribuci\'on por tipo}
+ 
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Tipo} & \textbf{Cantidad} & \textbf{\% del total} \\
+\midrule
+Ambig\"uedad      & 5 & 31.3\% \\
+Completitud       & 2 & 12.5\% \\
+Consistencia      & 3 & 18.8\% \\
+Verificabilidad   & 3 & 18.8\% \\
+Trazabilidad      & 3 & 18.8\% \\
+Factibilidad      & 0 & 0.0\%  \\
+\bottomrule
+\end{tabular}
+\caption{Distribuci\'on de defectos por tipo.}
+\end{table}
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{figuras/tipo.png}
+\caption{Cantidad de defectos por tipo.}
+\end{figure}
+ 
+\textit{Interpretaci\'on:} la ambig\"uedad concentra casi un tercio de los defectos (31\,\%), lo que muestra que el problema dominante del ERS es de redacci\'on --frases interpretables de m\'as de una forma-- m\'as que de alcance o de gesti\'on documental.
+ 
+% ============================================================
+% 3. DISTRIBUCION POR SEVERIDAD
+% ============================================================
+\subsubsection{ Distribuci\'on por severidad}
+ 
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Severidad} & \textbf{Cantidad} & \textbf{\% del total} \\
+\midrule
+Cr\'itico & 1 & 6.3\%  \\
+Mayor     & 9 & 56.3\% \\
+Menor     & 6 & 37.5\% \\
+\bottomrule
+\end{tabular}
+\caption{Distribuci\'on de defectos por severidad.}
+\end{table}
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{figuras/severidad.png}
+\caption{Cantidad de defectos por severidad.}
+\end{figure}
+ 
+\textit{Interpretaci\'on:} m\'as de la mitad de los defectos (56\,\%) son de severidad Mayor, lo que indica que el ERS requer\'ia una revisi\'on estructural del contenido y no solo ajustes puntuales de redacci\'on.
+ 
+% ============================================================
+% 4. TASA DE DETECCION POR INSPECTOR
+% ============================================================
+\subsubsection{ Tasa de detecci\'on por inspector}
+ 
+\begin{table}[H]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Inspector} & \textbf{Defectos detectados (bruto)} & \textbf{\% del total consolidado} \\
+\midrule
+Ariel Castro       & 8 & 50.0\%  \\
+Rosselyn S\'anchez & 9 & 56.3\%  \\
+\bottomrule
+\end{tabular}
+\caption{Tasa de detecci\'on por inspector (bruto, incluye defectos coincidentes).}
+\end{table}
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{figuras/inspector.png}
+\caption{Defectos detectados por inspector.}
+\end{figure}
+ 
+\textit{Interpretaci\'on:} la diferencia entre inspectores es peque\~na (50\,\% vs.\ 56\,\%), por lo que no refleja una brecha real de esfuerzo sino, probablemente, un mayor dominio de Rosselyn S\'anchez sobre los m\'odulos de mockups y trazabilidad que revis\'o.
+ 
+% ============================================================
+% 5. ESFUERZO TOTAL (HORAS-PERSONA)
+% ============================================================
+\subsubsection{ Esfuerzo total (horas-persona)}
+ 
+\begin{table}[H]
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Actividad} & \textbf{Participantes} & \textbf{Horas c/u} & \textbf{Horas-persona} \\
+\midrule
+Planificaci\'on (asignar roles y alcance)                      & 3 & 0.5 & 1.5 \\
+Preparaci\'on individual --- Ariel Castro (Inspector 1)         & 1 & 1.5 & 1.5 \\
+Preparaci\'on individual --- Rosselyn S\'anchez (Inspector 2)   & 1 & 1.5 & 1.5 \\
+Preparaci\'on/log\'istica --- Erick Mera (Moderador/Lector)     & 1 & 0.5 & 0.5 \\
+Reuni\'on de inspecci\'on (m\'ax. 90 min)                       & 3 & 1.1 & 3.3 \\
+Correcci\'on de defectos cr\'iticos/mayores                     & 1 & 1.5 & 1.5 \\
+\midrule
+\textbf{TOTAL} & & & \textbf{9.8} \\
+\bottomrule
+\end{tabular}
+\caption{Esfuerzo total de la inspecci\'on en horas-persona.}
+\end{table}
+ 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{figuras/esfuerzo.png}
+\caption{Esfuerzo por actividad (horas-persona).}
+\end{figure}
+ 
+\textit{Interpretaci\'on:} invertir 9.8 horas-persona permiti\'o detectar y corregir 10 defectos Cr\'iticos/Mayores antes de dise\~no, un costo bajo frente al que habr\'ia significado corregirlos en fases posteriores del proyecto.
 
-% ===================== 5. CORRECCIONES APLICADAS =====================
-\section{Correcciones aplicadas}
 
-% ===================== 6. GESTIÓN DEL CAMBIO Y CCB =====================
+% ===================== 3. CORRECCIONES APLICADAS =====================
+\subsection{Correcciones aplicadas}
+Se corrigi\'o el 100\,\% de los defectos Cr\'iticos y Mayores identificados en la inspecci\'on Fagan (Anexo B): 1 defecto Cr\'itico y 9 Mayores, 10 en total. Los 6 defectos Menores restantes no se corrigieron en esta entrega y se justifican al final de esta secci\'on.
+ 
+% ============================================================
+% DEFECTOS CORREGIDOS (CRITICOS Y MAYORES)
+% ============================================================
+\subsubsection*{Defectos corregidos (Cr\'iticos y Mayores)}
+ 
+\footnotesize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{
+  >{\raggedright\arraybackslash}p{0.05\linewidth}
+  >{\raggedright\arraybackslash}p{0.12\linewidth}
+  >{\raggedright\arraybackslash}p{0.35\linewidth}
+  >{\raggedright\arraybackslash}p{0.35\linewidth}
+  >{\centering\arraybackslash}p{0.055\linewidth}
+}
+\caption{Correcciones aplicadas a defectos Cr\'iticos y Mayores (100\,\% corregidos).} \label{tab:correcciones} \\
+\toprule
+\textbf{N} & \textbf{Requisito afectado} & \textbf{Texto ANTES} & \textbf{Texto DESPU\'ES} & \textbf{Severidad} \\
+\midrule
+\endfirsthead
+ 
+\multicolumn{5}{c}{\tablename\ \thetable{} -- Continuaci\'on} \\
+\toprule
+\textbf{N} & \textbf{Requisito afectado} & \textbf{Texto ANTES} & \textbf{Texto DESPU\'ES} & \textbf{Severidad} \\
+\midrule
+\endhead
+ 
+\midrule
+\multicolumn{5}{r}{\textit{Contin\'ua en la siguiente p\'agina}} \\
+\endfoot
+ 
+\bottomrule
+\endlastfoot
+ 
+D-02 & RF-AUT-03 & Prioridad/Kano: Should / Desempe\~no & Prioridad/Kano: Must / B\'asico (reclasificado por derivar de la obligaci\'on legal RD-PRI-02) & Mayor \\
+D-03 & Todos los RF & Estado: ``Especificado y trazado; validaci\'on con stakeholders pendiente.'' (repetido en 23 RF) & Se referencia una sola vez a la Sec.13 Plan de sesiones de validaci\'on, con fecha y responsable (Analista l\'ider) para el cierre de la validaci\'on de cada m\'odulo. & Mayor \\
+D-04 & RF-CLI-01 & (No existe requisito de consentimiento) & Se agrega RF-CLI-04 ``Registrar y consultar consentimiento del titular'': el sistema registrar\'a la base legitimadora/consentimiento de cada cliente, fecha y medio de obtenci\'on, consultable para auditor\'ia. Trazado a RD-PRI-03. & Mayor \\
+D-06 & RF-MEM-02 & Postcondici\'on: periodo nuevo trazable & Postcondici\'on: si la membres\'ia est\'a vigente, el nuevo periodo se suma desde la fecha de vencimiento actual (extensi\'on); si est\'a vencida o inexistente, inicia en la fecha de pago confirmado. Periodo nuevo trazable. & Mayor \\
+D-08 & RF-CLI-03 & Descripci\'on: ... advertir\'a coincidencias antes de crear otro cliente. & Descripci\'on: ... advertir\'a coincidencias exactas por nombre normalizado o por medio de contacto antes de crear otro cliente. & Mayor \\
+D-09 & RF-ASI-01 / MU-47 & Mockup MU-47 incluye captura de huella digital para registrar asistencia. & MU-47 se corrige eliminando el componente biom\'etrico; el registro de asistencia se realiza por b\'usqueda/c\'odigo de cliente, conforme a RF-ASI-01 y RNF-SEG-02. & Cr\'itico \\
+D-10 & RF-CLI-01 / MU-37 & MU-37 marcado ``requiere minimizaci\'on de campos'' sin seguimiento formal. & Se abre RFC-01 (Paso 2, CCB) para formalizar la correcci\'on de MU-37 con responsable y plazo. & Mayor \\
+D-12 & RF-INS-01, RF-RUT-01..03 & 5 mockups (MU-48, 49, 17, 29, 60) marcados con asterisco sin gesti\'on formal. & Se agrupan en RFC-02 (Paso 2, CCB) con plan de correcci\'on conjunto para los mockups de Instructor y Rutinas. & Mayor \\
+D-15 & RF-RUT-01 & Descripci\'on: ...crear\'a una rutina con objetivo operativo, ejercicios, series, repeticiones, descanso y d\'ias... & Descripci\'on: ...crear\'a una rutina con objetivo operativo, ejercicios, series, repeticiones, descanso y d\'ias, excluyendo diagn\'osticos, lesiones, peso y medidas reales. & Mayor \\
+D-16 & RF-INS-01 & (Fila ausente en matriz\_\allowbreak trazabilidad.csv) & Se agrega fila RF-INS-01 a la matriz con Ley/Objetivo/Stakeholder/ID-CU/ID-HU/ID-CA/Componente/Mockup/Moscow correspondientes. & Mayor \\
+ 
+\end{longtable}
+\normalsize
+ 
+% ============================================================
+% DEFECTOS MENORES NO CORREGIDOS (JUSTIFICACION)
+% ============================================================
+\subsubsection*{Defectos menores no corregidos (justificaci\'on)}
+ 
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{
+  >{\raggedright\arraybackslash}p{0.07\linewidth}
+  >{\raggedright\arraybackslash}p{0.15\linewidth}
+  >{\raggedright\arraybackslash}p{0.70\linewidth}
+}
+\caption{Justificaci\'on de defectos Menores no corregidos en esta entrega.} \label{tab:menores} \\
+\toprule
+\textbf{N} & \textbf{Requisito afectado} & \textbf{Justificaci\'on} \\
+\midrule
+\endfirsthead
+ 
+\multicolumn{3}{c}{\tablename\ \thetable{} -- Continuaci\'on} \\
+\toprule
+\textbf{N} & \textbf{Requisito afectado} & \textbf{Justificaci\'on} \\
+\midrule
+\endhead
+ 
+\midrule
+\multicolumn{3}{r}{\textit{Contin\'ua en la siguiente p\'agina}} \\
+\endfoot
+ 
+\bottomrule
+\endlastfoot
+ 
+D-01 & RF-AUT-01 & El detalle del mensaje de rechazo es una decisi\'on de dise\~no de UX/seguridad que se resolver\'a al especificar los mockups de error del MVP; no altera el alcance funcional del requisito. \\
+D-05 & RF-PAG-01 & El formato del comprobante se definir\'a en la fase de dise\~no del MVP (05\_MVP); no bloquea la validez del ERS actual. \\
+D-07 & RNF-SEG-03 & El alcance vigente del proyecto (seg\'un README) solo contempla despliegue conectado; se revisar\'a si se habilita un modo offline en una entrega futura. \\
+D-11 & RF-INV-02 & Se resolver\'a junto con la definici\'on de roles y permisos de RF-AUT-02 en una iteraci\'on posterior de la especificaci\'on. \\
+D-13 & RF-CAJ-01 & Pendiente de acordar con el cliente (Garrosh Gym) la pol\'itica de correcci\'on de cierres de caja en la pr\'oxima sesi\'on de validaci\'on. \\
+D-14 & RNF-ED-01 & El plan de generaci\'on de datos sint\'eticos para pruebas de carga se definir\'a en la fase de implementaci\'on, fuera del alcance del ERS. \\
+ 
+\end{longtable}
+\normalsize
+% ===================== 4. GESTIÓN DEL CAMBIO Y CCB =====================
 \section{Gestión del cambio y CCB}
 
 \subsection{RFC-01}
@@ -505,7 +838,7 @@ del usuario final.
 
 \subsection{Acta del CCB}
 
-% ===================== 7. TRAZABILIDAD EN HERRAMIENTA CASE =====================
+% ===================== 5. TRAZABILIDAD EN HERRAMIENTA CASE =====================
 \section{Trazabilidad en herramienta CASE}
 
 \subsection{Estructura del tablero}
@@ -514,10 +847,10 @@ del usuario final.
 
 \subsection{Evidencia}
 
-% ===================== 8. LÍNEA BASE CON GIT =====================
+% ===================== 6. LÍNEA BASE CON GIT =====================
 \section{Línea base con Git}
 
-% ===================== 9. COMPARATIVA DE HERRAMIENTAS CASE =====================
+% ===================== 7. COMPARATIVA DE HERRAMIENTAS CASE =====================
 \section{Comparativa de herramientas CASE}
 
 % ===================== 10. IR TRADICIONAL FRENTE A IR ÁGIL =====================
@@ -545,7 +878,117 @@ del usuario final.
 \section{Anexos}
 
 \subsection*{Anexo A -- Lista de verificación de inspección}
+
+
+\textbf{Inspector 1:} Ariel Castro Bajaña \quad
+\textbf{Alcance revisado:} Autenticación/Seguridad, Clientes, Membresías, Pagos, Requisitos legales y NFR generales (Secciones 4, 8, 9 del ERS) \quad
+\textbf{Base de trabajo:} ERS\_SRS\_2A\_v1.5.4 (FabroGym) \quad
+\textbf{Fecha:} 05/08/2026 \quad \textbf{Firma:} Ariel Castro
+
+\begin{longtable}{|p{1.8cm}|p{3.2cm}|p{2.8cm}|p{1cm}|p{2.3cm}|p{4.3cm}|}
+\caption{Anexo A -- Checklist de inspección, Inspector 1 (Ariel Castro)}
+\label{tab:anexoA_ariel} \\
+\hline
+\textbf{Propiedad} & \textbf{Pregunta de verificación} & \textbf{Requisito/sección} & \textbf{Cumple} & \textbf{Evidencia} & \textbf{Observación} \\ \hline
+\endfirsthead
+\hline
+\textbf{Propiedad} & \textbf{Pregunta de verificación} & \textbf{Requisito/sección} & \textbf{Cumple} & \textbf{Evidencia} & \textbf{Observación} \\ \hline
+\endhead
+Ambigüedad & ¿La salida del requisito está descrita sin dejar interpretaciones abiertas? & RF-AUT-01 (Autenticar usuario) & N & Sec.4, RF-AUT-01 & La salida "rechazo genérico" no especifica su contenido/formato; no aclara si distingue credencial inválida de cuenta inactiva. \\ \hline
+Consistencia & ¿La prioridad Kano del requisito es coherente con las obligaciones que lo originan? & RF-AUT-03 (Auditar cambios críticos) & N & Sec.9, RD-PRI-02 / Sec.4 RF-AUT-03 & RF-AUT-03 es "Should" pero está trazado como cumplimiento de RD-PRI-02 (obligación legal LOPDP), que no debería ser opcional. \\ \hline
+Completitud & ¿El estado de validación del requisito con los stakeholders está cerrado? & Todos los RF (23 requisitos) & N & Sec.4, campo "Estado" en cada RF & El campo "Estado" de todos los RF declara "validación con stakeholders pendiente"; no hay responsable ni fecha límite de cierre. \\ \hline
+Completitud & ¿Existe un requisito funcional que capture y audite el consentimiento exigido como precondición? & RF-CLI-01 (Registrar cliente mínimo) & N & Sec.4 RF-CLI-01 / Sec.9 RD-PRI-03 & La precondición exige "consentimiento/base legitimadora documentada" pero ningún RF especifica cómo se captura o consulta ese consentimiento. \\ \hline
+Ambigüedad & ¿El formato/medio del comprobante generado está especificado? & RF-PAG-01 (Registrar pago y comprobante) & N & Sec.4 RF-PAG-01 & No se especifica si el comprobante es descargable, imprimible o solo consultable en pantalla, ni su formato (PDF, texto, etc.). \\ \hline
+Ambigüedad & ¿El comportamiento ante una renovación sobre una membresía aún vigente está definido? & RF-MEM-02 (Activar o renovar membresía) & N & Sec.4 RF-MEM-02 & No se define si renovar antes del vencimiento extiende la fecha vigente o la sobrescribe desde la fecha de pago; afecta cálculo de negocio. \\ \hline
+Ambigüedad & ¿La condición "despliegue conectado" que activa el uso de TLS está acotada? & RNF-SEG-03 (Seguridad) & N & Sec.8 RNF-SEG-03 & No aclara qué ocurre en un despliegue no conectado (offline/LAN local), dejando abierta la interpretación de cuándo aplica TLS 1.2+. \\ \hline
+Verificabilidad & ¿El criterio de "coincidencia" que dispara la advertencia de duplicado es medible? & RF-CLI-03 (Actualizar o reactivar sin duplicar) & N & Sec.4 RF-CLI-03 & No define si la coincidencia es por nombre exacto, contacto o coincidencia difusa (fuzzy match); no es verificable sin ese criterio. \\ \hline
+Factibilidad & ¿Los RF de autenticación/clientes/membresías/pagos son técnicamente factibles dentro del alcance MVP declarado? & RF-AUT-01/02/03, RF-CLI-01/02/03, RF-MEM-01..04, RF-PAG-01/02 & S & Sec.4 & Sin observaciones; el alcance es consistente con las exclusiones formales declaradas en el README del PFC. \\ \hline
+Trazabilidad & ¿Los RF de este bloque tienen ID-EV, ID-CU, ID-HU y ID-CA asignados en la matriz? & RF-AUT-01..03, RF-CLI-01..03, RF-MEM-01..04, RF-PAG-01/02 & S & 04\_Trazabilidad/matriz\_trazabilidad.csv & Sin observaciones; todos los requisitos de este bloque aparecen trazados en la matriz extendida. \\ \hline
+\end{longtable}
+
+\bigskip
+
+\textbf{Inspector 2:} Rosselyn Sánchez Centeno \quad
+\textbf{Alcance revisado:} Asistencia, Inventario, Ventas, Caja, Novedades, Instructor, Rutinas, Reportes y Mockups (Secciones 4, 6, 8, 9 del ERS) \quad
+\textbf{Base de trabajo:} ERS\_SRS\_2A\_v1.5.4 (FabroGym) \quad
+\textbf{Fecha:} 05/08/2026 \quad \textbf{Firma:} Rosselyn Sánchez
+
+\begin{longtable}{|p{1.6cm}|p{3.2cm}|p{2.8cm}|p{1cm}|p{2.3cm}|p{4.3cm}|}
+\caption{Anexo A -- Checklist de inspección, Inspector 2 (Rosselyn Sánchez)}
+\label{tab:anexoA_rosselyn} \\
+\hline
+\textbf{Propiedad} & \textbf{Pregunta de verificación} & \textbf{Requisito/sección} & \textbf{Cumple} & \textbf{Evidencia} & \textbf{Observación} \\ \hline
+\endfirsthead
+\hline
+\textbf{Propiedad} & \textbf{Pregunta de verificación} & \textbf{Requisito/sección} & \textbf{Cumple} & \textbf{Evidencia} & \textbf{Observación} \\ \hline
+\endhead
+Consistencia & ¿El mockup vigente vinculado al RF respeta la restricción de no captura biométrica? & MU-47 / RF-ASI-01 (Registrar asistencia) / RNF-SEG-02 & N & Sec.6 MU-47, Sec.4 RF-ASI-01, Sec.8 RNF-SEG-02 & MU-47 está marcado en el propio ERS como pendiente por incluir huella digital, contradiciendo "asistencia no biométrica" y el 0\,\% de captura biométrica exigido. \\ \hline
+Trazabilidad & ¿Existe un RFC o seguimiento formal para los mockups marcados con asterisco (*) como pendientes de corrección? & MU-37 (Clientes) & N & Sec.6 MU-37 / RF-CLI-01 & MU-37 requiere "minimización de campos" según el propio ERS, pero no hay RFC ni responsable ni plazo asociado a esa corrección. \\ \hline
+Ambigüedad & ¿El criterio de "ajuste autorizado" que permite saldo negativo está definido? & RF-INV-02 (Registrar movimientos de stock) & N & Sec.4 RF-INV-02 & No define quién autoriza el ajuste ni bajo qué condiciones se permite un saldo negativo temporal. \\ \hline
+Trazabilidad & ¿Los mockups de Instructor y Rutinas marcados con asterisco tienen seguimiento formal de corrección? & MU-48, MU-49, MU-17, MU-29, MU-60 (Instructor/Rutinas) & N & Sec.6 & Cinco mockups de Must/Should quedan marcados como pendientes de corrección sin RFC ni acta que los gestione. \\ \hline
+Verificabilidad & ¿El mecanismo y plazo de "corrección auditada" de un turno cerrado están definidos? & RF-CAJ-01 (Cerrar turno y conciliar caja) & N & Sec.4 RF-CAJ-01 & No se define hasta cuándo ni bajo qué mecanismo se puede corregir un turno ya cerrado e "inmutable". \\ \hline
+Verificabilidad & ¿Existe trazabilidad del insumo de prueba (10\,000 clientes sintéticos) usado para verificar el NFR? & RNF-ED-01 (Eficiencia de desempeño) & N & Sec.8 RNF-ED-01 / Sec.13 & Ningún RF ni el plan de pruebas describe cómo se generarán o validarán los 10\,000 clientes sintéticos exigidos por la prueba de carga. \\ \hline
+Consistencia & ¿La exclusión de datos sensibles (diagnósticos, lesiones, peso, medidas) se aplica de forma uniforme entre RF del mismo módulo? & RF-RUT-01 (Crear y asignar rutina) vs RF-RUT-03 & N & Sec.4 RF-RUT-01 / RF-RUT-03 & RF-RUT-03 excluye explícitamente datos sensibles; RF-RUT-01, que crea la rutina, no repite esa restricción de forma explícita. \\ \hline
+Trazabilidad & ¿RF-INS-01 aparece registrado como fila en la matriz de trazabilidad extendida? & RF-INS-01 (Gestionar horario y disponibilidad de instructor) & N & 04\_Trazabilidad/matriz\_trazabilidad.csv & RF-INS-01 no aparece como fila en el extracto de matriz de trazabilidad extendida revisado; queda como requisito huérfano en ese artefacto. \\ \hline
+Completitud & ¿El estado de validación con stakeholders de los RF de este bloque está cerrado? & RF-ASI-01/02, RF-INV-01..03, RF-VEN-01, RF-CAJ-01, RF-NOV-01, RF-INS-01, RF-RUT-01..03, RF-REP-01 & N & Sec.4, campo "Estado" & Igual que en el bloque de Ariel Castro: todos los RF de este alcance declaran "validación con stakeholders pendiente" (hallazgo coincidente, se consolida como un solo defecto en el Anexo B). \\ \hline
+Factibilidad & ¿Los RF operativos (asistencia, inventario, ventas, caja) son factibles dentro del alcance MVP declarado? & RF-ASI-01/02, RF-INV-01..03, RF-VEN-01, RF-CAJ-01 & S & Sec.4 & Sin observaciones; el alcance operativo es consistente con las exclusiones formales del proyecto. \\ \hline
+\end{longtable}
+
 \subsection*{Anexo B -- Registro de defectos}
+
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{
+  >{\raggedright\arraybackslash}p{0.04\linewidth}
+  >{\raggedright\arraybackslash}p{0.12\linewidth}
+  >{\raggedright\arraybackslash}p{0.26\linewidth}
+  >{\raggedright\arraybackslash}p{0.13\linewidth}
+  >{\raggedright\arraybackslash}p{0.09\linewidth}
+  >{\raggedright\arraybackslash}p{0.12\linewidth}
+  >{\raggedright\arraybackslash}p{0.11\linewidth}
+  >{\centering\arraybackslash}p{0.055\linewidth}
+}
+\caption{Anexo B --- Registro de defectos consolidado (Inspecci\'on Fagan, PE4). Moderador: Erick Mera; Lector: Erick Mera; Inspector 1: Ariel Castro; Inspector 2: Rosselyn S\'anchez.} \label{tab:anexoB} \\
+\toprule
+\textbf{N} & \textbf{Secci\'on (ERS)} & \textbf{Descripci\'on del defecto} & \textbf{Tipo} & \textbf{Severidad} & \textbf{Requisito afectado} & \textbf{Detectado por} & \textbf{Corregido} \\
+\midrule
+\endfirsthead
+ 
+\multicolumn{8}{c}{\tablename\ \thetable{} -- Continuaci\'on} \\
+\toprule
+\textbf{N} & \textbf{Secci\'on (ERS)} & \textbf{Descripci\'on del defecto} & \textbf{Tipo} & \textbf{Severidad} & \textbf{Requisito afectado} & \textbf{Detectado por} & \textbf{Corregido} \\
+\midrule
+\endhead
+ 
+\midrule
+\multicolumn{8}{r}{\textit{Contin\'ua en la siguiente p\'agina}} \\
+\endfoot
+ 
+\bottomrule
+\endlastfoot
+ 
+D-01 & Sec.4, RF-AUT-01 & La salida ``rechazo gen\'erico'' del login no especifica su contenido/formato ni si distingue credencial inv\'alida de cuenta inactiva. & Ambig\"uedad & Menor & RF-AUT-01 & Ariel Castro & N \\
+D-02 & Sec.9 RD-PRI-02 / Sec.4 RF-AUT-03 & RF-AUT-03 (auditar cambios cr\'iticos) tiene prioridad Should pese a derivar de la obligaci\'on legal RD-PRI-02 (LOPDP). & Consistencia & Mayor & RF-AUT-03 & Ariel Castro & S \\
+D-03 & Sec.4, campo ``Estado'' (23 RF) & Todos los requisitos funcionales declaran ``validaci\'on con stakeholders pendiente'', sin responsable ni fecha l\'imite de cierre. & Completitud & Mayor & RF-AUT-01..\allowbreak RF-REP-01 (todos) & Ariel Castro y Rosselyn S\'anchez (coincidente) & S \\
+D-04 & Sec.4 RF-CLI-01 / Sec.9 RD-PRI-03 & No existe un requisito funcional que capture o audite el consentimiento exigido como precondici\'on de RF-CLI-01. & Completitud & Mayor & RF-CLI-01 & Ariel Castro & S \\
+D-05 & Sec.4 RF-PAG-01 & No se especifica el formato/medio del comprobante de pago (descargable, imprimible, solo en pantalla). & Ambig\"uedad & Menor & RF-PAG-01 & Ariel Castro & N \\
+D-06 & Sec.4 RF-MEM-02 & No se define si renovar una membres\'ia a\'un vigente extiende la fecha de vencimiento o la sobrescribe desde la fecha de pago. & Ambig\"uedad & Mayor & RF-MEM-02 & Ariel Castro & S \\
+D-07 & Sec.8 RNF-SEG-03 & La condici\'on ``despliegue conectado'' que activa TLS 1.2+ no est\'a acotada; no aclara el caso de despliegue offline/LAN. & Ambig\"uedad & Menor & RNF-SEG-03 & Ariel Castro & N \\
+D-08 & Sec.4 RF-CLI-03 & El criterio de ``coincidencia'' que dispara la advertencia de cliente duplicado no est\'a definido (exacto vs. difuso). & Verificabilidad & Mayor & RF-CLI-03 & Ariel Castro & S \\
+D-09 & Sec.6 MU-47 / Sec.4 RF-ASI-01 / Sec.8 RNF-SEG-02 & El mockup vigente MU-47 incluye captura de huella digital, contradiciendo ``asistencia no biom\'etrica'' y el 0\% de captura biom\'etrica exigido. & Consistencia & Cr\'itico & RF-ASI-01 / RNF-SEG-02 & Rosselyn S\'anchez & S \\
+D-10 & Sec.6 MU-37 / Sec.4 RF-CLI-01 & MU-37 est\'a marcado como pendiente de ``minimizaci\'on de campos'' sin RFC ni responsable ni plazo de correcci\'on. & Trazabilidad & Mayor & RF-CLI-01 & Rosselyn S\'anchez & S \\
+D-11 & Sec.4 RF-INV-02 & No se define qui\'en autoriza un ``ajuste autorizado'' ni bajo qu\'e condiciones se permite saldo negativo de stock. & Ambig\"uedad & Menor & RF-INV-02 & Rosselyn S\'anchez & N \\
+D-12 & Sec.6 MU-48, MU-49, MU-17, MU-29, MU-60 & Cinco mockups de Instructor/Rutinas quedan marcados como pendientes de correcci\'on sin RFC ni acta que los gestione. & Trazabilidad & Mayor & RF-INS-01 / RF-RUT-01 / RF-RUT-02 / RF-RUT-03 & Rosselyn S\'anchez & S \\
+D-13 & Sec.4 RF-CAJ-01 & No se define el mecanismo ni el plazo permitido para la ``correcci\'on auditada'' de un turno de caja ya cerrado. & Verificabilidad & Menor & RF-CAJ-01 & Rosselyn S\'anchez & N \\
+D-14 & Sec.8 RNF-ED-01 / Sec.13 & Ning\'un RF ni el plan de pruebas describe c\'omo se generar\'an o validar\'an los 10\,000 clientes sint\'eticos exigidos por la prueba de carga. & Verificabilidad & Menor & RNF-ED-01 & Rosselyn S\'anchez & N \\
+D-15 & Sec.4 RF-RUT-01 / RF-RUT-03 & RF-RUT-03 excluye expl\'icitamente datos sensibles (diagn\'osticos, lesiones, peso, medidas); RF-RUT-01, que crea la rutina, no repite esa restricci\'on. & Consistencia & Mayor & RF-RUT-01 & Rosselyn S\'anchez & S \\
+D-16 & Sec.9 matriz\_\allowbreak trazabilidad.csv & RF-INS-01 no aparece como fila en la matriz de trazabilidad extendida; queda como requisito hu\'erfano en ese artefacto. & Trazabilidad & Mayor & RF-INS-01 & Rosselyn S\'anchez & S \\
+ 
+\end{longtable}
+\normalsize
+ 
+
 \subsection*{Anexo C -- Formularios RFC y Acta del CCB}
 \subsection*{Anexo D -- Exportación CSV del backlog}
 \subsection*{Anexo E -- Capturas del tablero CASE y del repositorio Git}
