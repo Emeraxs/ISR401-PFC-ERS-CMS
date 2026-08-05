@@ -149,6 +149,127 @@ la aprobación informal de cambios por una deliberación trazable y
 auditable.
 
 \subsection{Validación de requisitos}
+\subsubsection{Verificación frente a validación}
+ 
+La distinción clásica --- y frecuentemente confundida en la práctica --- es
+que la \textbf{verificación} responde a la pregunta ``¿estamos construyendo
+el producto correctamente?'', es decir, si el requisito cumple criterios
+internos de calidad (no ambiguo, consistente, verificable), mientras que la
+\textbf{validación} responde a ``¿estamos construyendo el producto
+correcto?'', es decir, si el conjunto de requisitos representa fielmente
+lo que el stakeholder necesita \cite{iso29148_2018, pohl2025}. Un requisito
+puede estar perfectamente verificado (bien redactado, medible) y, sin
+embargo, no ser válido porque no responde a una necesidad real del negocio.
+ 
+\subsubsection{Principios y técnicas de validación}
+ 
+Pohl \cite{pohl2025} plantea que la validación debe ser continua ---no un
+evento único al final--- e involucrar activamente a los stakeholders, no
+solo al equipo técnico. Entre las técnicas disponibles se encuentran:
+ 
+\begin{itemize}
+  \item \textbf{Revisión (review):} lectura crítica del documento por
+  personas distintas del autor, sin protocolo estricto de roles.
+  \item \textbf{Walkthrough:} el autor guía a los revisores a través del
+  documento, útil para socializar el contenido más que para encontrar
+  defectos sistemáticamente.
+  \item \textbf{Inspección formal (Fagan):} técnica estructurada, con
+  roles diferenciados, checklist y métricas, descrita en detalle a
+  continuación.
+  \item \textbf{Prototipado:} construcción de una representación
+  ejecutable parcial del sistema para validar requisitos difíciles de
+  verificar solo por lectura (p. ej., interacción de usuario).
+  \item \textbf{Listas de verificación (checklists):} conjuntos de
+  preguntas orientadas a propiedades específicas del requisito
+  (ambigüedad, completitud, consistencia, verificabilidad, trazabilidad,
+  factibilidad), tal como las exige el Anexo A de la ISO/IEC/IEEE
+  29148:2018.
+  \item \textbf{Perspectivas (perspective-based reading):} cada revisor
+  examina el documento desde un rol distinto (usuario, desarrollador,
+  probador), lo que amplía el tipo de defectos detectados.
+\end{itemize}
+ 
+\subsubsection{El método de inspección Fagan}
+ 
+La inspección formal fue introducida por Fagan \cite{fagan1976} como un
+proceso estructurado para detectar defectos en artefactos de desarrollo de
+software mediante revisión por pares, con el objetivo de reducir errores
+en etapas tempranas, cuando su corrección es más económica. El método
+define cinco fases:
+ 
+\begin{enumerate}
+  \item \textbf{Planificación:} el moderador selecciona el material a
+  inspeccionar, asigna los roles y programa la reunión.
+  \item \textbf{Overview (visión general):} el autor presenta el contexto
+  del artefacto a los inspectores.
+  \item \textbf{Preparación individual:} cada inspector examina el
+  material de forma independiente y registra los defectos que encuentra,
+  antes de la reunión conjunta.
+  \item \textbf{Reunión de inspección:} conducida por el moderador, con
+  el lector parafraseando el contenido sección por sección y los
+  inspectores reportando los defectos encontrados; el propósito es
+  \emph{detectar}, no discutir soluciones.
+  \item \textbf{Reelaboración y seguimiento:} el autor corrige los
+  defectos y el moderador verifica que las correcciones sean adecuadas
+  antes de cerrar el ciclo.
+\end{enumerate}
+ 
+Fagan \cite{fagan1976} distingue cuatro roles: el \emph{moderador}
+(conduce el proceso y consolida el registro), el \emph{lector}
+(parafrasea el contenido sin leerlo literalmente, para forzar comprensión
+en vez de lectura mecánica), y los \emph{inspectores} (detectan defectos
+desde su perspectiva particular). Este reparto de roles es precisamente el
+que exige el Anexo A y el Paso 1 de la presente práctica.
+ 
+\subsubsection{Métricas de inspección}
+ 
+De un proceso de inspección se derivan métricas cuantitativas que permiten
+interpretar la calidad del artefacto revisado y la eficacia del propio
+proceso \cite{fagan1976, pohl2025}:
+ 
+\begin{itemize}
+  \item \textbf{Densidad de defectos:} número de defectos encontrados por
+  página o por requisito inspeccionado; un valor alto sugiere que el ERS
+  necesita una revisión más profunda antes de avanzar.
+  \item \textbf{Distribución por tipo:} clasifica los defectos según la
+  propiedad violada (ambigüedad, omisión, inconsistencia, etc.), lo que
+  orienta dónde reforzar la elicitación o la redacción.
+  \item \textbf{Distribución por severidad:} separa defectos críticos,
+  mayores y menores, priorizando el esfuerzo de corrección.
+  \item \textbf{Tasa de detección por inspector:} compara la efectividad
+  individual, útil para calibrar checklists o capacitación futura.
+  \item \textbf{Esfuerzo total (horas-persona):} permite calcular el
+  costo del proceso de inspección y contrastarlo contra el costo estimado
+  de corregir esos mismos defectos en etapas posteriores del proyecto.
+\end{itemize}
+ 
+\subsubsection{Caso ilustrativo}
+ 
+Durante la inspección del ERS del sistema de gestión administrativa y operativa
+para FabroGym se detectó una inconsistencia entre dos requisitos relacionados
+con la administración de membresías. El requisito \textbf{RF-MEM-02} establece
+que el sistema debe permitir activar o renovar una membresía únicamente cuando
+el pago correspondiente haya sido registrado y validado. Sin embargo, en el
+flujo descrito para el proceso de pagos se observó que el requisito
+\textbf{RF-PAG-02} contempla la posibilidad de mantener pagos pendientes,
+permitiendo posteriormente su regularización.
+
+La revisión evidenció que el documento no especificaba con claridad si un
+cliente con un pago pendiente podía conservar una membresía activa o si esta
+debía permanecer suspendida hasta completar el pago. Esta situación originaba
+dos interpretaciones distintas para un mismo proceso de negocio, lo que fue
+clasificado durante la inspección Fagan como un defecto de \textbf{inconsistencia}.
+
+Como acción correctiva, el equipo acordó modificar el ERS para establecer que
+la activación o renovación de la membresía solo podrá completarse cuando el
+estado del pago sea \textit{confirmado}. Mientras exista un pago pendiente, la
+membresía permanecerá en estado \textit{pendiente de activación}, evitando así
+ambigüedades entre los módulos de membresías y pagos.
+
+Este caso demuestra cómo la aplicación del método de inspección Fagan permite
+identificar contradicciones entre requisitos funcionales antes de la etapa de
+implementación, mejorando la consistencia interna del ERS y reduciendo el riesgo
+de retrabajo durante el desarrollo del sistema \cite{pohl2025,swebok_v4}. 
 
 \subsection{Gestión de requisitos}
 
