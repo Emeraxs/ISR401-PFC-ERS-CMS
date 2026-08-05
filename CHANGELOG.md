@@ -34,5 +34,5 @@ descrito en la Guía PE4, Unidad IV. Formato: [Versión] - [Fecha] / Añadido / 
 
 ### Nota de línea base
 - Versión resultante del ERS tras la implementación de los tres cambios
-  aprobados por el CCB (Acta del [fecha]): **v1.5.9**.
+  aprobados por el CCB (Acta del 2026/08/05): **v1.5.9**.
 - Tag de Git publicado: `baseline-v1.5.9`.
