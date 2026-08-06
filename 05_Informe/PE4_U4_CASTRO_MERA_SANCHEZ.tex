@@ -1133,6 +1133,17 @@ Este archivo contiene la información exportada de las tarjetas del tablero y co
 % ===================== 6. LÍNEA BASE CON GIT =====================
 \section{Línea base con Git}
 
+El repositorio público \texttt{ISR401-PFC-ERS-CMS} contiene el historial completo de versionado del ERS del proyecto FabroGym. Se registraron 65 commits distribuidos entre los tres integrantes del equipo, con mensajes semánticos que documentan cada etapa: fundamento teórico, inspección Fagan, gestión del cambio (RFC y CCB), trazabilidad en la herramienta CASE y actualización del informe.
+
+Se creó y publicó la línea base del ERS mediante un tag anotado, verificable en el repositorio remoto:
+
+\begin{verbatim}
+git tag -a baseline-v1.5.9 -m "Baseline aprobada por CCB"
+git push origin baseline-v1.5.9
+\end{verbatim}
+
+El archivo \texttt{CHANGELOG.md} documenta cada versión del ERS con sus cambios añadidos, modificados y eliminados, con una entrada correspondiente a cada RFC aprobado por el CCB, en coherencia con la versión declarada en la portada del ERS, en el propio \texttt{CHANGELOG.md} y en el tag \texttt{baseline-v1.5.9}. El historial de commits y el tag publicado se evidencian en el Anexo E (Figuras~\ref{fig:gitlog} y~\ref{fig:gittag}).
+
 % ===================== 7. COMPARATIVA DE HERRAMIENTAS CASE =====================
 \section{Comparativa de herramientas CASE}
 La Tabla \ref{tab:case} presenta una comparación entre cuatro herramientas CASE utilizadas para la gestión de requisitos. La evaluación considera seis criterios relevantes para el desarrollo del proyecto FabroGym y se basa en la experiencia de uso, documentación técnica y necesidades del equipo.
@@ -1508,6 +1519,20 @@ Adicionalmente, se incluyen capturas del detalle de tres tarjetas del tablero, d
     \includegraphics[width=0.9\textwidth]{figuras/RF-MEM-02.jpg}
     \caption{Detalle de la tarjeta RF-MEM-02 – Activar o renovar membresía.}
     \label{fig:rfmem02}
+\end{figure}
+
+Finalmente, se incluyen las capturas del historial de commits y de la línea base publicada en el repositorio Git del proyecto, correspondientes al comando \texttt{git log --oneline --graph --decorate} y a \texttt{git tag -n}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figuras/git_log_graph.jpg}
+    \caption{Historial de commits del repositorio (\texttt{git log --oneline --graph --decorate}).}
+    \label{fig:gitlog}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figuras/git_tag.jpg}
+    \caption{Tag anotado \texttt{baseline-v1.5.9} publicado en el repositorio remoto (\texttt{git tag -n}).}
+    \label{fig:gittag}
 \end{figure}
 
 \subsection*{Anexo F -- Referencias IEEE y declaración de uso de IA}
